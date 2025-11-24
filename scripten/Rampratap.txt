@@ -1,0 +1,12 @@
+Textpassage (in Rampratap Dorf): 
+	Hallo! Willkommen in meinem kleinen Dorf in Indien. Ich heiße Rampratap, schön dich kennenzulernen. Bei uns wird es durch die Erderwärmung an manchen Tagen über 50 Grad heiß – sogar im Schatten! Wir haben kaum Wasser und oft 	fangen die Felder wegen der Hitze an zu brennen. Vielleicht kannst du mir helfen?
+Minigame (Vor Österreichischen Haus):
+	Stell dir vor: Dein bester Freund Tom hat dich zu einer Übernachtungsparty eingeladen. Du hast schon alles gepackt und überlegst, wie du zu ihm kommst.
+	Du hast ein neues rotes Fahrrad bekommen, mit dem könntest du hinfahren. Oder dein Papa bringt dich mit dem Auto.
+	Klick auf das Fahrrad oder auf das Auto und entscheide dich!
+Richtige Entscheidung (Wieder in Ramprataps Dorf):
+	Super Entscheidung! Wenn du mit dem Fahrrad fährst, entstehen keine Abgase. Dein Fahrrad läuft mit deiner eigenen Muskelkraft.
+	Wenn viele Menschen so handeln wie du, könnte es bei mir in Indien wieder kühler und angenehmer werden.
+Falsche Entscheidung (Kind wird im Minigame aufgehalten):
+	Bist du sicher, dass du mit dem Auto fahren willst? Autos stoßen Abgase aus, die die Erde wärmer machen.
+	Dann würde es bei mir noch heißer werden. Vielleicht willst du dich doch nochmal anders entscheiden?
