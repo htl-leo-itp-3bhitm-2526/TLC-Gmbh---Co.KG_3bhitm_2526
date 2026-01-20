@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Scene</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .scene {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            background: red;
+        }
+
+        .bg {
+            position: absolute;
+            width: auto;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .object {
+            position: absolute;
+            z-index: 2;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="scene" class="scene">
+        <img id="bg" class="bg" src="house.svg" alt="">
+        <img id="car" class="object" src="car.svg" alt="">
+        <img id="bike" class="object" src="bike.svg" alt="">
+    </div>
+
+    <script>
+        const backgroundWidth = 1920;
+        const backgroundHeight = 1080;
+
+        const scene = document.getElementById("scene");
+        const bg = document.getElementById("bg");
+        const car = document.getElementById("car");
+        const bike = document.getElementById("bike");
+
+        function layout() {
+            const clientWidth = scene.clientWidth;
+            const clientHeight = scene.clientHeight;
+
+            const scale = clientHeight / backgroundHeight;
+
+            const drawnW = backgroundWidth * scale;
+            const drawnH = backgroundHeight * scale;
+
+            const offX = (clientWidth - drawnW) / 2;   // mittig, dadurch links und rechts gleich viel Crop
+            const offY = (clientHeight - drawnH) / 2;
+
+            // Hintergrund wirklich an diese Offsets setzen
+            bg.style.left = offX + "px";
+            bg.style.top = offY + "px";
+            bg.style.height = drawnH + "px";
+
+            // Auto in Hintergrund Koordinaten
+            const carRight = 1000;
+            const carBottom = 400;
+            const carWidth = 560;
+
+            const carX = backgroundWidth - carRight;
+            const carY = backgroundHeight - carBottom;
+
+            car.style.left = (offX + carX * scale) + "px";
+            car.style.top = (offY + carY * scale) + "px";
+            car.style.width = (carWidth * scale) + "px";
+
+            const bikeRight = 1400;
+            const bikeBottom = 400;
+            const bikeWidth = 240;
+
+            const bikeX = backgroundWidth - bikeRight;
+            const bikeY = backgroundHeight - bikeBottom;
+
+            car.style.left = (offX + carX * scale) + "px";
+            car.style.top = (offY + carY * scale) + "px";
+            car.style.width = (carWidth * scale) + "px";
+
+            bike.style.left = (offX + bikeX * scale) + "px";
+            bike.style.top = (offY + bikeY * scale) + "px";
+            bike.style.width = (bikeWidth * scale) + "px";
+        }
+
+        addEventListener("resize", layout);
+        addEventListener("orientationchange", layout);
+        bg.addEventListener("load", layout);
+        car.addEventListener("load", layout);
+        bike.addEventListener("load", layout);
+    </script>
+
+
+</body>
+
+</html>
