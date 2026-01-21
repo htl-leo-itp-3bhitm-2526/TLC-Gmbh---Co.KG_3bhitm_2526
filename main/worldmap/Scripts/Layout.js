@@ -88,7 +88,4 @@ function loadTextBox(object, width, fontSize, border, borderRadius) {
 // Laden der layout Function
 addEventListener("resize", layout);
 addEventListener("orientationchange", layout);
-worldmap.addEventListener("load", layout);
-rampatrap.addEventListener("load", layout);
-introduction.addEventListener("load", layout);
 layout();
