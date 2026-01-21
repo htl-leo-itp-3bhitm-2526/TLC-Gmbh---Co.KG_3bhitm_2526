@@ -1,4 +1,4 @@
-function loadVillageStartScene() {
+function loadVillageScene() {
     const scene = document.getElementById("scene");
     scene.innerHTML = `
         <img id="background" class="background" src="SVGs/village.svg" alt="">
@@ -6,7 +6,7 @@ function loadVillageStartScene() {
         <img id="rampatrapArm" class="object" src="SVGs/rampatrapArm.svg" alt="">
     `;
 
-    setBackroundScale(1920 , 1080);
+    setBackroundScale(1920, 1080);
 
     objects = [
         {
@@ -28,7 +28,7 @@ function loadVillageStartScene() {
     layout(objects, textBoxes);
 }
 
-function loadHouseScene(){
+function loadHouseScene() {
     const scene = document.getElementById("scene");
     scene.innerHTML = `
         <img id="background" class="background" src="SVGs/house.svg" alt="">
@@ -38,7 +38,7 @@ function loadHouseScene(){
         <div class="textBox" id="decisionBox">Klicke auf das Fahrrad oder das Auto!</div>
     `;
 
-    setBackroundScale(1920 , 1080);
+    setBackroundScale(1920, 1080);
 
     objects = [
         {
@@ -61,9 +61,24 @@ function loadHouseScene(){
             width: 650,
             fontSize: 45,
             borderSize: 8,
-            borderRadius : 8
+            borderRadius: 8
         }
     ];
+
+    layout(objects, textBoxes);
+}
+
+function loadWrongDecisionScene() {
+    scene.innerHTML += `
+        <img id="rampatrap" class="object" src="SVGs/rampatrapSad.svg" alt="">
+    `;
+
+    objects.push({
+        object: document.getElementById("rampatrap"),
+        right: 600,
+        bottom: 500,
+        width: 230
+    });
 
     layout(objects, textBoxes);
 }

@@ -63,38 +63,52 @@ body {
 
 #decisionBox {
     position: fixed;
+    display: none;
     top: 5vw;
     right: 5vw;
 }
 
 #bike{
-    background-color: #cf573c;
     padding: 1.5vw;
     border-radius: 50px;
-
-    animation: changeColor 10s linear infinite;
 }
 
 #car{
-    background-color: #402751;
     padding: 1.5vw;
     border-radius: 50px;
 }
 
-@keyframes changeColor {
+@keyframes orangeAnimation {
     0% {
-        background-color: #cf573c00;
-    }
-    40% {
         background-color: #cf573c00;
     }
     50% {
         background-color: #cf573c;
     }
-    60% {
-        background-color: #cf573c00;
-    }
     100% {
         background-color: #cf573c00;
     }
 }
+
+@keyframes purpleAnimation {
+    0% {
+        background-color: #40275100;
+    }
+    50% {
+        background-color: #402751;
+    }
+    100% {
+        background-color: #40275100;
+    }
+}
+
+
+@keyframes blendIn{
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
