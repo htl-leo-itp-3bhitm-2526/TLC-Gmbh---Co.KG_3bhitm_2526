@@ -1,20 +1,38 @@
-// Verhältnise des Hintergrundbildes angeben
-const backgroundWidth = 2899.2;
-const backgroundHeight = 1449.94;
+let backgroundWidth;
+let backgroundHeight;
 
 // Bildschirmgröße holen
-const scene = document.getElementById("scene");
-const clientWidth = scene.clientWidth;
-const clientHeight = scene.clientHeight;
+let scene;
+let clientWidth;
+let clientHeight;
 
 //Skalierung ausrechnen
-const scale = clientHeight / backgroundHeight;
-const drawnW = backgroundWidth * scale;
-const drawnH = backgroundHeight * scale;
-const offX = (clientWidth - drawnW) / 2;
-const offY = (clientHeight - drawnH) / 2;
+let scale;
+let drawnW;
+let drawnH;
+let offX;
+let offY;
+
+function setScale() {
+    // Verhältnise des Hintergrundbildes angeben
+    backgroundWidth = 2899.2;
+    backgroundHeight = 1449.94;
+
+    // Bildschirmgröße holen
+    scene = document.getElementById("scene");
+    clientWidth = scene.clientWidth;
+    clientHeight = scene.clientHeight;
+
+    //Skalierung ausrechnen
+    scale = clientHeight / backgroundHeight;
+    drawnW = backgroundWidth * scale;
+    drawnH = backgroundHeight * scale;
+    offX = (clientWidth - drawnW) / 2;
+    offY = (clientHeight - drawnH) / 2;
+}
 
 function layout() {
+    setScale();
 
     //worlmap skalieren
     const worldmap = document.getElementById("worldmap");
@@ -48,6 +66,8 @@ function layout() {
 }
 
 function loadObjects(object, right, bottom, width) {
+    setScale();
+
     let x = backgroundWidth - right;
     let y = backgroundHeight - bottom;
 
@@ -57,6 +77,8 @@ function loadObjects(object, right, bottom, width) {
 }
 
 function loadTextBox(object, width, fontSize, border, borderRadius) {
+    setScale();
+
     object.style.width = (width * scale) + "px";
     object.style.fontSize = (fontSize * scale) + "px";
     object.style.border = (border * scale) + "px solid #FED880";
