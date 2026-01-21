@@ -54,15 +54,47 @@ body {
     background-color: #FAC05A;
     color: #28192F;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    text-align: center;
 
     height: auto;
+
+    z-index: 2;
 }
 
 #decisionBox {
     position: fixed;
     top: 5vw;
     right: 5vw;
+}
+
+#bike{
+    background-color: #cf573c;
+    padding: 1.5vw;
+    border-radius: 50px;
+
+    animation: changeColor 10s linear infinite;
+}
+
+#car{
+    background-color: #402751;
+    padding: 1.5vw;
+    border-radius: 50px;
+}
+
+@keyframes changeColor {
+    0% {
+        background-color: #cf573c00;
+    }
+    40% {
+        background-color: #cf573c00;
+    }
+    50% {
+        background-color: #cf573c;
+    }
+    60% {
+        background-color: #cf573c00;
+    }
+    100% {
+        background-color: #cf573c00;
+    }
 }

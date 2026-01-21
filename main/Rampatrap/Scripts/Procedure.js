@@ -1,15 +1,28 @@
-villageStartScene();
+loadVillageStartScene();
 
-const audio = new Audio('audios/rampatrapVillageStartScene.mp3');
-audio.play();
+    const audio = new Audio('audios/rampatrapVillageStartScene.mp3');
+    audio.play();
 
-audio.addEventListener('ended', function() {
-    houseScene();
-});
+    setTimeout(setIdel, 4000);
 
-const audio2 = new Audio('audios/rampatrapHouseDecideScene.mp3');
-audio2.play();
+    function setIdel() {
+        document.getElementById("rampatrapArm").style.display = "none";
+        document.getElementById("rampatrap").src = "SVGs/rampatrapSad.svg";
+    }
 
-audio2.addEventListener('ended', function() {
-   villageStartScene();
-});
+
+    audio.addEventListener('ended', function () {
+        loadHouseScene();
+        houseScene();
+    });
+
+
+    function houseScene() {
+        const audio2 = new Audio('audios/rampatrapHouseDecideScene.mp3');
+        audio2.play();
+
+        audio2.addEventListener('ended', function () {
+            villageStartScene();
+        });
+    }
+
