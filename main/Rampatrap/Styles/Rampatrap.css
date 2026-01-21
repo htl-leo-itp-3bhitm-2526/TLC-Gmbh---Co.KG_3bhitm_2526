@@ -16,7 +16,7 @@ body {
     padding: 0;
 }
 
-.bg {
+.background {
     position: absolute;
     width: auto;
     height: 100%;
@@ -61,7 +61,7 @@ body {
     height: auto;
 }
 
-#introduction {
+#decisionBox {
     position: fixed;
     top: 5vw;
     right: 5vw;
