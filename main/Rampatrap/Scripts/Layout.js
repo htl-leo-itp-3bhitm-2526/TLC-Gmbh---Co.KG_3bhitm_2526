@@ -37,6 +37,7 @@ function layout(objects, textBoxes) {
 
     //worlmap skalieren
     const background = document.getElementById("background");
+    if (!background) return;
     background.style.left = offX + "px";
     background.style.top = offY + "px";
     background.style.height = drawnH + "px";
