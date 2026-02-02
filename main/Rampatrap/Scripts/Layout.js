@@ -41,32 +41,45 @@ function layout(objects, textBoxes) {
     background.style.top = offY + "px";
     background.style.height = drawnH + "px";
 
+    console.log("layout aufgerufen")
+    console.log(textBoxes);
+    console.log(objects);
+
+    document.getElementById("elements").innerHTML = "";
+    
     for (let o = 0; o < objects.length; o++) {
-        loadObjects(objects[o].object, objects[o].right, objects[o].bottom, objects[o].width);
+        document.getElementById("elements").innerHTML += `
+            <img id="${objects[o].id}" class="object" src="${objects[o].img}">
+        `;
+        loadObjects(objects[o].id, objects[o].img, objects[o].right, objects[o].bottom, objects[o].width);
     }
     for (let t = 0; t < textBoxes.length; t++) {
-        loadTextBox(textBoxes[t].object, textBoxes[t].width, textBoxes[t].fontSize, textBoxes[t].borderSize, textBoxes[t].borderRadius);
+        document.getElementById("elements").innerHTML += `
+            <div class="textBox" id="${textBoxes[t].id}">${textBoxes[t].text}</div> 
+        `;
+        console.log("Text box hinzugefügt")
+
+        loadTextBox(textBoxes[t].id, textBoxes[t].text, textBoxes[t].width, textBoxes[t].fontSize);
     }
 }
 
-function loadObjects(object, right, bottom, width) {
+function loadObjects(id, img, right, bottom, width) {
     setScale();
 
     let x = backgroundWidth - right;
     let y = backgroundHeight - bottom;
 
-    object.style.left = (offX + x * scale) + "px";
-    object.style.top = (offY + y * scale) + "px";
-    object.style.width = (width * scale) + "px";
+    document.getElementById(id).style.left = (offX + x * scale) + "px";
+    document.getElementById(id).style.top = (offY + y * scale) + "px";
+    document.getElementById(id).style.width = (width * scale) + "px";
 }
 
-function loadTextBox(object, width, fontSize, border, borderRadius) {
+function loadTextBox(id, text, width, fontSize) {
     setScale();
-
-    object.style.width = (width * scale) + "px";
-    object.style.fontSize = (fontSize * scale) + "px";
-    object.style.border = (border * scale) + "px solid #FED880";
-    object.style.borderRadius = (borderRadius * scale) + "px";
+    document.getElementById(id).style.width = (width * scale) + "px";
+    document.getElementById(id).style.fontSize = (fontSize * scale) + "px";
+    document.getElementById(id).style.border = (8 * scale) + "px solid #FED880";
+    document.getElementById(id).style.borderRadius = (8 * scale) + "px";
 }
 
 let objects = [];
@@ -79,3 +92,4 @@ let textBoxes = [];
 addEventListener("resize", () => layout(objects, textBoxes));
 addEventListener("orientationchange", () => layout(objects, textBoxes));
 layout(objects, textBoxes);
+

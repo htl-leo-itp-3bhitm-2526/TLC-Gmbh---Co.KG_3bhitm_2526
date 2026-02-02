@@ -1,73 +1,98 @@
+introductionVillageScene();
 
-    loadVillageScene();
+//------------------------------------------------------------------------------------
+
+function introductionVillageScene() {
+
+    changeBackground("SVGs/village.svg");
+
+    addObject("rampatrap", "SVGs/rampatrapNoArm.svg", 900, 700, 230);
+    addObject("rampatrapArm", "SVGs/rampatrapArm.svg", 740, 500, 50);
 
     const audio = new Audio('audios/rampatrapVillageStartScene.mp3');
     audio.play();
 
-    setTimeout(setIdel, 4000);
-
-    function setIdel() {
-        document.getElementById("rampatrapArm").style.display = "none";
-        document.getElementById("rampatrap").src = "SVGs/rampatrapSad.svg";
-    }
-
+    setTimeout(explanationVillageScene, 4000);
 
     audio.addEventListener('ended', function () {
-        loadHouseScene();
         houseScene();
     });
 
+}
 
-    function houseScene() {
-        const audio = new Audio('audios/rampatrapHouseDecideScene.mp3');
-        audio.play();
+function explanationVillageScene(){
+    changeBackground("SVGs/village.svg");
 
-        setTimeout(animateBike, 4500);
-        setTimeout(animateCar, 6500);
+    deleteObject("rampatrap");
+    deleteObject("rampatrapArm");
 
-        function animateBike(){
-            document.getElementById("bike").style.animation = "orangeAnimation 2s linear";
-        }
+    addObject("rampatrap", "SVGs/rampatrap.svg", 900, 700, 230);
+}
 
-        function animateCar(){
-            document.getElementById("car").style.animation = "purpleAnimation 2s linear";
-        }
+//------------------------------------------------------------------------------------
 
-        audio.addEventListener('ended', function () {
-            document.getElementById("bike").style.animation = "none";
-            document.getElementById("car").style.animation = "none";
+function houseScene() {
+    changeBackground("SVGs/house.svg");
 
-            document.getElementById("decisionBox").style.display = "block";
-            document.getElementById("decisionBox").style.animation = "blendIn 0.5s linear";
+    deleteObject("rampatrap");
 
-            document.getElementById("car").onclick = wrongDecisionScene;
-            document.getElementById("bike").onclick = RightDecisionScene;
-        });
+    addObject("bike", "SVGs/bike.svg", 900, 420, 270);
+    addObject("car", "SVGs/car.svg", 1600, 400, 500);
+
+    const audio = new Audio('audios/rampatrapHouseDecideScene.mp3');
+    audio.play();
+
+    setTimeout(animateBike, 4500);
+    setTimeout(animateCar, 6500);
+
+    function animateBike() {
+        document.getElementById("bike").style.animation = "orangeAnimation 2s linear";
     }
 
-    function wrongDecisionScene(){
-        loadWrongDecisionScene();
-        document.getElementById("decisionBox").style.display = "none";
-
-        const audio = new Audio('audios/rampatrapWrongDecision.mp3');
-        audio.play();
-
-        audio.addEventListener('ended', function () {
-            document.getElementById("decisionBox").style.display = "block";
-            document.getElementById("decisionBox").style.animation = "blendIn 0.5s linear";
-            document.getElementById("decisionBox").innerHTML = "Klicke auf das Fahrrad um keine schädlichen Abgase in die Luft zu stoßen!";
-            document.getElementById("bike").onclick = RightDecisionScene;
-        });
+    function animateCar() {
+        document.getElementById("car").style.animation = "purpleAnimation 2s linear";
     }
 
-    function RightDecisionScene(){
-        loadVillageScene();
-        document.getElementById("rampatrapArm").style.display = "none";
-        document.getElementById("rampatrap").src = "SVGs/rampatrap.svg";
+    audio.addEventListener('ended', function () {
+        document.getElementById("bike").style.animation = "none";
+        document.getElementById("car").style.animation = "none";
 
-        const audio = new Audio('audios/rampatrapRightDecision.mp3');
-        audio.play();
-        audio.addEventListener('ended', function () {
-            window.location.href = "../Worldmap/index.html";
-        });
-    }
+        addTextBox("decisionBox", "Klicke auf das Fahrrad oder das Auto!", 650, 45);
+
+        document.getElementById("car").addEventListener("click", wrongDecisionScene);
+document.getElementById("bike").addEventListener("click", RightDecisionScene);
+
+    });
+}
+
+//------------------------------------------------------------------------------------
+
+function wrongDecisionScene() {
+    addObject("rampatrap", "SVGs/rampatrapSad.svg", 600, 500, 230);
+    document.getElementById("decisionBox").style.display = "none";
+
+    const audio = new Audio('audios/rampatrapWrongDecision.mp3');
+    audio.play();
+
+    audio.addEventListener('ended', function () {
+        document.getElementById("decisionBox").style.display = "block";
+        document.getElementById("decisionBox").style.animation = "blendIn 0.5s linear";
+        document.getElementById("decisionBox").innerHTML = "Klicke auf das Fahrrad um keine schädlichen Abgase in die Luft zu stoßen!";
+        document.getElementById("bike").onclick = RightDecisionScene;
+    });
+}
+
+//------------------------------------------------------------------------------------
+
+function RightDecisionScene() {
+    loadIntroductionVillageScene();
+    document.getElementById("rampatrapArm").style.display = "none";
+    document.getElementById("rampatrap").src = "SVGs/rampatrap.svg";
+
+    const audio = new Audio('audios/rampatrapRightDecision.mp3');
+    audio.play();
+    audio.addEventListener('ended', function () {
+        window.location.href = "../Worldmap/index.html";
+    });
+}
+
