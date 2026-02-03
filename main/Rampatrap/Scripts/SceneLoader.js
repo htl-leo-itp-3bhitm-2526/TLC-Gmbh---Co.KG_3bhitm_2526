@@ -1,14 +1,3 @@
-if (scene == null) {
-    const scene = document.getElementById("scene");
-}
-
-objects = [];
-textBoxes = [];
-
-
-changeBackground("SVGs/village.svg" ,1920, 1080);
-
-
 function addObject(id, img, right, bottom, width) {
     objects.push(
         {
@@ -21,7 +10,7 @@ function addObject(id, img, right, bottom, width) {
     );
 
     loadHTMLs(objects, textBoxes);
-    layout(objects, textBoxes);
+    scaleElements(objects, textBoxes);
 }
 
 function addTextBox(id, text, width, fontSize) {
@@ -36,7 +25,7 @@ function addTextBox(id, text, width, fontSize) {
     );
 
     loadHTMLs(objects, textBoxes);
-    layout(objects, textBoxes);
+    scaleElements(objects, textBoxes);
 }
 
 function deleteObject(id) {
@@ -52,7 +41,7 @@ function deleteObject(id) {
     objects = newList;
 
     loadHTMLs(objects, textBoxes);
-    layout(objects, textBoxes);
+    scaleElements(objects, textBoxes);
 }
 
 function deleteTextBox(id) {
@@ -68,7 +57,7 @@ function deleteTextBox(id) {
     textBoxes = newList;
 
     loadHTMLs(objects, textBoxes);
-    layout(objects, textBoxes);
+    scaleElements(objects, textBoxes);
 }
 
 function changeBackground(img, W, H){

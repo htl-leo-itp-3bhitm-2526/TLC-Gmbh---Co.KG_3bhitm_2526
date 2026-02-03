@@ -2,21 +2,23 @@
 let backgroundWidth;
 let backgroundHeight;
 
-let scene;
-let clientWidth;
-let clientHeight;
-
 let scale;
-let drawnW;
-let drawnH;
 let offX;
 let offY;
+let drawnW;
+let drawnH;
+
+let scene = document.getElementById("scene");
+
+objects = [];
+textBoxes = [];
+
 
 function setScale() {
     // Bildschirmgröße holen
     scene = document.getElementById("scene");
-    clientWidth = scene.clientWidth;
-    clientHeight = scene.clientHeight;
+    let clientWidth = scene.clientWidth;
+    let clientHeight = scene.clientHeight;
 
     //Skalierung ausrechnen
     scale = clientHeight / backgroundHeight;
@@ -26,7 +28,7 @@ function setScale() {
     offY = (clientHeight - drawnH) / 2;
 }
 
-function layout(objects, textBoxes) {
+function scaleElements(objects, textBoxes) {
     setScale();
 
     //worlmap skalieren
@@ -78,8 +80,9 @@ function loadHTMLs(objects, textBoxes){
 
 
 
+
+
 // Laden der layout Function
-addEventListener("resize", () => layout(objects, textBoxes));
-addEventListener("orientationchange", () => layout(objects, textBoxes));
-layout(objects, textBoxes);
+addEventListener("resize", () => scaleElements(objects, textBoxes));
+addEventListener("orientationchange", () => scaleElements(objects, textBoxes));
 
