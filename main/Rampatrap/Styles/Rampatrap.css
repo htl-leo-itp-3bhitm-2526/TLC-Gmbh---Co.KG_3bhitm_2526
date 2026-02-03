@@ -16,7 +16,7 @@ body {
     padding: 0;
 }
 
-.background {
+#background {
     position: absolute;
     width: auto;
     height: 100%;

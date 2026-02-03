@@ -12,12 +12,6 @@ let drawnH;
 let offX;
 let offY;
 
-function setBackroundScale(W, H) {
-    // Verhältnise des Hintergrundbildes angeben
-    backgroundWidth = W;
-    backgroundHeight = H;
-}
-
 function setScale() {
     // Bildschirmgröße holen
     scene = document.getElementById("scene");
@@ -40,10 +34,6 @@ function layout(objects, textBoxes) {
     background.style.left = offX + "px";
     background.style.top = offY + "px";
     background.style.height = drawnH + "px";
-
-    console.log("layout aufgerufen")
-    console.log(textBoxes);
-    console.log(objects);
     
     for (let o = 0; o < objects.length; o++) {
         loadObjects(objects[o].id, objects[o].img, objects[o].right, objects[o].bottom, objects[o].width);
@@ -71,10 +61,6 @@ function loadTextBox(id, text, width, fontSize) {
     document.getElementById(id).style.border = (8 * scale) + "px solid #FED880";
     document.getElementById(id).style.borderRadius = (8 * scale) + "px";
 }
-
-let objects = [];
-
-let textBoxes = [];
 
 function loadHTMLs(objects, textBoxes){
     document.getElementById("elements").innerHTML = "";

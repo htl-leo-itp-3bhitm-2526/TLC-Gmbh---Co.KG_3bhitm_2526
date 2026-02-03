@@ -4,7 +4,7 @@ introductionVillageScene();
 
 function introductionVillageScene() {
 
-    changeBackground("SVGs/village.svg");
+    changeBackground("SVGs/village.svg", 1920, 1080);
 
     addObject("rampatrap", "SVGs/rampatrapNoArm.svg", 900, 700, 230);
     addObject("rampatrapArm", "SVGs/rampatrapArm.svg", 740, 500, 50);
@@ -21,7 +21,7 @@ function introductionVillageScene() {
 }
 
 function explanationVillageScene(){
-    changeBackground("SVGs/village.svg");
+    changeBackground("SVGs/village.svg", 1920, 1080);
 
     deleteObject("rampatrap");
     deleteObject("rampatrapArm");
@@ -32,7 +32,7 @@ function explanationVillageScene(){
 //------------------------------------------------------------------------------------
 
 function houseScene() {
-    changeBackground("SVGs/house.svg");
+    changeBackground("SVGs/house.svg", 1920, 1080);
 
     deleteObject("rampatrap");
 

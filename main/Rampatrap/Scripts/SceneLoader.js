@@ -2,12 +2,11 @@ if (scene == null) {
     const scene = document.getElementById("scene");
 }
 
-scene.innerHTML = `
-        <img id="background" class="background" src="SVGs/village.svg" alt="">
-        <div id="elements"></div>
-`;
+objects = [];
+textBoxes = [];
 
-setBackroundScale(1920, 1080);
+
+changeBackground("SVGs/village.svg" ,1920, 1080);
 
 
 function addObject(id, img, right, bottom, width) {
@@ -72,6 +71,8 @@ function deleteTextBox(id) {
     layout(objects, textBoxes);
 }
 
-function changeBackground(img){
+function changeBackground(img, W, H){
     document.getElementById("background").src = img;
+    backgroundWidth = W;
+    backgroundHeight = H;
 }
