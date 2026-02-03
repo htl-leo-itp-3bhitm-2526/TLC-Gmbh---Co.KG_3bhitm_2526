@@ -13,6 +13,9 @@ let scene = document.getElementById("scene");
 objects = [];
 textBoxes = [];
 
+addEventListener("resize", () => scaleElements(objects, textBoxes));
+addEventListener("orientationchange", () => scaleElements(objects, textBoxes));
+
 
 function setScale() {
     // Bildschirmgröße holen
@@ -38,14 +41,14 @@ function scaleElements(objects, textBoxes) {
     background.style.height = drawnH + "px";
     
     for (let o = 0; o < objects.length; o++) {
-        loadObjects(objects[o].id, objects[o].img, objects[o].right, objects[o].bottom, objects[o].width);
+        scaleObjects(objects[o].id, objects[o].img, objects[o].right, objects[o].bottom, objects[o].width);
     }
     for (let t = 0; t < textBoxes.length; t++) {
-        loadTextBox(textBoxes[t].id, textBoxes[t].text, textBoxes[t].width, textBoxes[t].fontSize);
+        scaleTextBox(textBoxes[t].id, textBoxes[t].text, textBoxes[t].width, textBoxes[t].fontSize);
     }
 }
 
-function loadObjects(id, img, right, bottom, width) {
+function scaleObjects(id, img, right, bottom, width) {
     setScale();
 
     let x = backgroundWidth - right;
@@ -56,7 +59,7 @@ function loadObjects(id, img, right, bottom, width) {
     document.getElementById(id).style.width = (width * scale) + "px";
 }
 
-function loadTextBox(id, text, width, fontSize) {
+function scaleTextBox(id, text, width, fontSize) {
     setScale();
     document.getElementById(id).style.width = (width * scale) + "px";
     document.getElementById(id).style.fontSize = (fontSize * scale) + "px";
@@ -77,12 +80,3 @@ function loadHTMLs(objects, textBoxes){
         `;
     }
 }
-
-
-
-
-
-// Laden der layout Function
-addEventListener("resize", () => scaleElements(objects, textBoxes));
-addEventListener("orientationchange", () => scaleElements(objects, textBoxes));
-
