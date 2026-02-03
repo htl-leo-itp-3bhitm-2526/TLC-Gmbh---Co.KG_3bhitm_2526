@@ -21,6 +21,7 @@ function addObject(id, img, right, bottom, width) {
         }
     );
 
+    loadHTMLs(objects, textBoxes);
     layout(objects, textBoxes);
 }
 
@@ -35,6 +36,7 @@ function addTextBox(id, text, width, fontSize) {
         }
     );
 
+    loadHTMLs(objects, textBoxes);
     layout(objects, textBoxes);
 }
 
@@ -50,6 +52,7 @@ function deleteObject(id) {
 
     objects = newList;
 
+    loadHTMLs(objects, textBoxes);
     layout(objects, textBoxes);
 }
 
@@ -65,6 +68,7 @@ function deleteTextBox(id) {
 
     textBoxes = newList;
 
+    loadHTMLs(objects, textBoxes);
     layout(objects, textBoxes);
 }
 

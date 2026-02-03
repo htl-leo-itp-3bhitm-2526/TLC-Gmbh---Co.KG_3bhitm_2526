@@ -44,21 +44,11 @@ function layout(objects, textBoxes) {
     console.log("layout aufgerufen")
     console.log(textBoxes);
     console.log(objects);
-
-    document.getElementById("elements").innerHTML = "";
     
     for (let o = 0; o < objects.length; o++) {
-        document.getElementById("elements").innerHTML += `
-            <img id="${objects[o].id}" class="object" src="${objects[o].img}">
-        `;
         loadObjects(objects[o].id, objects[o].img, objects[o].right, objects[o].bottom, objects[o].width);
     }
     for (let t = 0; t < textBoxes.length; t++) {
-        document.getElementById("elements").innerHTML += `
-            <div class="textBox" id="${textBoxes[t].id}">${textBoxes[t].text}</div> 
-        `;
-        console.log("Text box hinzugefügt")
-
         loadTextBox(textBoxes[t].id, textBoxes[t].text, textBoxes[t].width, textBoxes[t].fontSize);
     }
 }
@@ -85,6 +75,20 @@ function loadTextBox(id, text, width, fontSize) {
 let objects = [];
 
 let textBoxes = [];
+
+function loadHTMLs(objects, textBoxes){
+    document.getElementById("elements").innerHTML = "";
+    for (let o = 0; o < objects.length; o++) {
+        document.getElementById("elements").innerHTML += `
+            <img id="${objects[o].id}" class="object" src="${objects[o].img}">
+        `;
+    }
+    for (let t = 0; t < textBoxes.length; t++) {
+        document.getElementById("elements").innerHTML += `
+            <div class="textBox" id="${textBoxes[t].id}">${textBoxes[t].text}</div> 
+        `;
+    }
+}
 
 
 
