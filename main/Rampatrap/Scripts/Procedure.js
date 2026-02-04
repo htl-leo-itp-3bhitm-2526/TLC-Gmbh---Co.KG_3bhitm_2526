@@ -71,15 +71,14 @@ function houseScene() {
 
 function wrongDecisionScene() {
     addObject("rampatrap", "SVGs/rampatrapSad.svg", 800, 700, 230);
-    document.getElementById("decisionBox").style.display = "none";
+    deleteTextBox("decisionBox");
 
     const audio = new Audio('audios/rampatrapWrongDecision.mp3');
     audio.play();
 
     audio.addEventListener('ended', function () {
-        document.getElementById("decisionBox").style.display = "block";
+        addTextBox("decisionBox", "Klicke auf das Fahrrad um keine schädlichen Abgase in die Luft zu stoßen!", 650, 45)
         document.getElementById("decisionBox").style.animation = "blendIn 0.5s linear";
-        document.getElementById("decisionBox").innerHTML = "Klicke auf das Fahrrad um keine schädlichen Abgase in die Luft zu stoßen!";
         document.getElementById("bike").onclick = RightDecisionScene;
     });
 }
