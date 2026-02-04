@@ -16,7 +16,7 @@ body {
     padding: 0;
 }
 
-.background {
+#background {
     position: absolute;
     width: auto;
     height: 100%;
@@ -28,11 +28,13 @@ body {
     position: absolute;
     z-index: 2;
     height: auto;
+    transform: translate(50%, 50%);
 }
 
 #rampatrapArm {
     transform: rotate(350deg);
     transform-origin: top left;
+    transform: translate(0%, 0%);
     animation: rotateArm 1.5s linear infinite;
 }
 
@@ -54,15 +56,62 @@ body {
     background-color: #FAC05A;
     color: #28192F;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    text-align: center;
 
     height: auto;
+
+    z-index: 2;
 }
 
 #decisionBox {
     position: fixed;
+    /*display: none;*/
     top: 5vw;
     right: 5vw;
+    animation: blendIn 0.5s linear;
 }
+
+#bike{
+    padding: 1.5vw;
+    border-radius: 50px;
+}
+
+#car{
+    padding: 1.5vw;
+    border-radius: 50px;
+}
+
+@keyframes orangeAnimation {
+    0% {
+        background-color: #cf573c00;
+    }
+    50% {
+        background-color: #cf573c;
+    }
+    100% {
+        background-color: #cf573c00;
+    }
+}
+
+@keyframes purpleAnimation {
+    0% {
+        background-color: #40275100;
+    }
+    50% {
+        background-color: #402751;
+    }
+    100% {
+        background-color: #40275100;
+    }
+}
+
+
+@keyframes blendIn{
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
