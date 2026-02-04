@@ -16,7 +16,7 @@ body {
     padding: 0;
 }
 
-.background {
+#background {
     position: absolute;
     width: auto;
     height: 100%;
@@ -63,9 +63,10 @@ body {
 
 #decisionBox {
     position: fixed;
-    display: none;
+    /*display: none;*/
     top: 5vw;
     right: 5vw;
+    animation: blendIn 0.5s linear;
 }
 
 #bike{

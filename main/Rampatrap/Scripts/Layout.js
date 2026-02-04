@@ -2,27 +2,26 @@
 let backgroundWidth;
 let backgroundHeight;
 
-let scene;
-let clientWidth;
-let clientHeight;
-
 let scale;
-let drawnW;
-let drawnH;
 let offX;
 let offY;
+let drawnW;
+let drawnH;
 
-function setBackroundScale(W, H) {
-    // Verhältnise des Hintergrundbildes angeben
-    backgroundWidth = W;
-    backgroundHeight = H;
-}
+let scene = document.getElementById("scene");
+
+objects = [];
+textBoxes = [];
+
+addEventListener("resize", () => scaleElements(objects, textBoxes));
+addEventListener("orientationchange", () => scaleElements(objects, textBoxes));
+
 
 function setScale() {
     // Bildschirmgröße holen
     scene = document.getElementById("scene");
-    clientWidth = scene.clientWidth;
-    clientHeight = scene.clientHeight;
+    let clientWidth = scene.clientWidth;
+    let clientHeight = scene.clientHeight;
 
     //Skalierung ausrechnen
     scale = clientHeight / backgroundHeight;
@@ -32,7 +31,7 @@ function setScale() {
     offY = (clientHeight - drawnH) / 2;
 }
 
-function layout(objects, textBoxes) {
+function scaleElements(objects, textBoxes) {
     setScale();
 
     //worlmap skalieren
@@ -40,42 +39,44 @@ function layout(objects, textBoxes) {
     background.style.left = offX + "px";
     background.style.top = offY + "px";
     background.style.height = drawnH + "px";
-
+    
     for (let o = 0; o < objects.length; o++) {
-        loadObjects(objects[o].object, objects[o].right, objects[o].bottom, objects[o].width);
+        scaleObjects(objects[o].id, objects[o].img, objects[o].right, objects[o].bottom, objects[o].width);
     }
     for (let t = 0; t < textBoxes.length; t++) {
-        loadTextBox(textBoxes[t].object, textBoxes[t].width, textBoxes[t].fontSize, textBoxes[t].borderSize, textBoxes[t].borderRadius);
+        scaleTextBox(textBoxes[t].id, textBoxes[t].text, textBoxes[t].width, textBoxes[t].fontSize);
     }
 }
 
-function loadObjects(object, right, bottom, width) {
+function scaleObjects(id, img, right, bottom, width) {
     setScale();
 
     let x = backgroundWidth - right;
     let y = backgroundHeight - bottom;
 
-    object.style.left = (offX + x * scale) + "px";
-    object.style.top = (offY + y * scale) + "px";
-    object.style.width = (width * scale) + "px";
+    document.getElementById(id).style.left = (offX + x * scale) + "px";
+    document.getElementById(id).style.top = (offY + y * scale) + "px";
+    document.getElementById(id).style.width = (width * scale) + "px";
 }
 
-function loadTextBox(object, width, fontSize, border, borderRadius) {
+function scaleTextBox(id, text, width, fontSize) {
     setScale();
-
-    object.style.width = (width * scale) + "px";
-    object.style.fontSize = (fontSize * scale) + "px";
-    object.style.border = (border * scale) + "px solid #FED880";
-    object.style.borderRadius = (borderRadius * scale) + "px";
+    document.getElementById(id).style.width = (width * scale) + "px";
+    document.getElementById(id).style.fontSize = (fontSize * scale) + "px";
+    document.getElementById(id).style.border = (8 * scale) + "px solid #FED880";
+    document.getElementById(id).style.borderRadius = (8 * scale) + "px";
 }
 
-let objects = [];
-
-let textBoxes = [];
-
-
-
-// Laden der layout Function
-addEventListener("resize", () => layout(objects, textBoxes));
-addEventListener("orientationchange", () => layout(objects, textBoxes));
-layout(objects, textBoxes);
+function loadHTMLs(objects, textBoxes){
+    document.getElementById("elements").innerHTML = "";
+    for (let o = 0; o < objects.length; o++) {
+        document.getElementById("elements").innerHTML += `
+            <img id="${objects[o].id}" class="object" src="${objects[o].img}">
+        `;
+    }
+    for (let t = 0; t < textBoxes.length; t++) {
+        document.getElementById("elements").innerHTML += `
+            <div class="textBox" id="${textBoxes[t].id}">${textBoxes[t].text}</div> 
+        `;
+    }
+}
