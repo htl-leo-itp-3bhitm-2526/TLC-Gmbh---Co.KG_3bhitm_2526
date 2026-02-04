@@ -90,6 +90,7 @@ function RightDecisionScene() {
     deleteObject("car");
     deleteObject("bike");
     deleteTextBox("decisionBox")
+    deleteTextBox("rampatrap")
 
     changeBackground("SVGs/village.svg", 1920, 1080);
     addObject("rampatrap", "SVGs/rampatrap.svg", 1015, 1000, 230);
