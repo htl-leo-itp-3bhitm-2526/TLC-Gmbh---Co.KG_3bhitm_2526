@@ -1,3 +1,4 @@
+[Audio José sprechen hören] 
 José (Dorf-Seite, 15 Sek. Audio):
 Hallo! Ich bin José aus meinem kleinen Dorf in Guatemala.
 Hier ist alles ganz trocken und staubig. Früher haben unsere Maisfelder immer genug Regen bekommen und wir hatten genug zu essen.
@@ -5,10 +6,10 @@ Aber jetzt regnet es fast gar nicht mehr. Die Sonne brennt so stark, dass meine 
 Mein Brunnen ist fast leer und meine Familie hat nur noch Essen für zwei Tage.
 Wenn du bei deiner Dusche Wasser sparst, habe ich hier selbst mehr Wasser für meine Felder!
 
-[Audio José sprechen hören] [Button Ja, ich spar Wasser für José]
+[Button Ja, ich spar Wasser für José]
 
 José (Dusche-Seite, 10 Sek. Audio):
-Danke, dass du mir helfen willst! In meinem Dorf müssen wir jeden Tropfen zählen.
+Danke, dass du mir helfen willst! In meinem Dorf müssen wir jeden Tropfen zählen. 
 Der Brunnen wird immer leerer und meine Pflanzen brauchen Wasser. 
 Dusche jetzt bitte ganz kurz. Wenn du Wasser sparst, habe ich selbst mehr für meine Felder!
 
