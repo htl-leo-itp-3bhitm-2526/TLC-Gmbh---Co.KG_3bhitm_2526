@@ -57,6 +57,9 @@ function scaleObjects(id, img, right, bottom, width) {
     document.getElementById(id).style.left = (offX + x * scale) + "px";
     document.getElementById(id).style.top = (offY + y * scale) + "px";
     document.getElementById(id).style.width = (width * scale) + "px";
+
+    document.getElementById(id).style.borderRadius = (50 * scale) + "px";
+    document.getElementById(id).style.padding = (50 * scale) + "px";
 }
 
 function scaleTextBox(id, text, width, fontSize) {

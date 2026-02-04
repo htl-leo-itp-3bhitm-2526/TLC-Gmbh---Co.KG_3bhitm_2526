@@ -28,11 +28,13 @@ body {
     position: absolute;
     z-index: 2;
     height: auto;
+    transform: translate(50%, 50%);
 }
 
 #rampatrapArm {
     transform: rotate(350deg);
     transform-origin: top left;
+    transform: translate(0%, 0%);
     animation: rotateArm 1.5s linear infinite;
 }
 

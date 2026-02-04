@@ -1,13 +1,15 @@
 introductionVillageScene();
 
+
 //------------------------------------------------------------------------------------
 
 function introductionVillageScene() {
 
     changeBackground("SVGs/village.svg", 1920, 1080);
 
-    addObject("rampatrap", "SVGs/rampatrapNoArm.svg", 900, 700, 230);
-    addObject("rampatrapArm", "SVGs/rampatrapArm.svg", 740, 500, 50);
+    addObject("rampatrap", "SVGs/rampatrapNoArm.svg", 1015, 1000, 230);
+    addObject("rampatrapArm", "SVGs/rampatrapArm.svg", 640, 340, 50);
+
 
     const audio = new Audio('audios/rampatrapVillageStartScene.mp3');
     audio.play();
@@ -20,13 +22,13 @@ function introductionVillageScene() {
 
 }
 
-function explanationVillageScene(){
+function explanationVillageScene() {
     changeBackground("SVGs/village.svg", 1920, 1080);
 
     deleteObject("rampatrap");
     deleteObject("rampatrapArm");
 
-    addObject("rampatrap", "SVGs/rampatrap.svg", 900, 700, 230);
+    addObject("rampatrap", "SVGs/rampatrapSad.svg", 1015, 1000, 230);
 }
 
 //------------------------------------------------------------------------------------
@@ -36,8 +38,8 @@ function houseScene() {
 
     deleteObject("rampatrap");
 
-    addObject("bike", "SVGs/bike.svg", 900, 420, 270);
-    addObject("car", "SVGs/car.svg", 1600, 400, 500);
+    addObject("bike", "SVGs/bike.svg", 1100, 600, 270);
+    addObject("car", "SVGs/car.svg", 1900, 650, 500);
 
     const audio = new Audio('audios/rampatrapHouseDecideScene.mp3');
     audio.play();
@@ -60,7 +62,7 @@ function houseScene() {
         addTextBox("decisionBox", "Klicke auf das Fahrrad oder das Auto!", 650, 45);
 
         document.getElementById("car").addEventListener("click", wrongDecisionScene);
-document.getElementById("bike").addEventListener("click", RightDecisionScene);
+        document.getElementById("bike").addEventListener("click", RightDecisionScene);
 
     });
 }
@@ -68,7 +70,7 @@ document.getElementById("bike").addEventListener("click", RightDecisionScene);
 //------------------------------------------------------------------------------------
 
 function wrongDecisionScene() {
-    addObject("rampatrap", "SVGs/rampatrapSad.svg", 600, 500, 230);
+    addObject("rampatrap", "SVGs/rampatrapSad.svg", 800, 700, 230);
     document.getElementById("decisionBox").style.display = "none";
 
     const audio = new Audio('audios/rampatrapWrongDecision.mp3');
@@ -85,9 +87,12 @@ function wrongDecisionScene() {
 //------------------------------------------------------------------------------------
 
 function RightDecisionScene() {
-    loadIntroductionVillageScene();
-    document.getElementById("rampatrapArm").style.display = "none";
-    document.getElementById("rampatrap").src = "SVGs/rampatrap.svg";
+    deleteObject("car");
+    deleteObject("bike");
+    deleteTextBox("decisionBox")
+
+    changeBackground("SVGs/village.svg", 1920, 1080);
+    addObject("rampatrap", "SVGs/rampatrap.svg", 1015, 1000, 230);
 
     const audio = new Audio('audios/rampatrapRightDecision.mp3');
     audio.play();
