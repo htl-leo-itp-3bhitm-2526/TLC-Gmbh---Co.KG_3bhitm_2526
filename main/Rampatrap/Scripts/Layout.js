@@ -79,4 +79,3 @@ let textBoxes = [];
 // Laden der layout Function
 addEventListener("resize", () => layout(objects, textBoxes));
 addEventListener("orientationchange", () => layout(objects, textBoxes));
-layout(objects, textBoxes);
