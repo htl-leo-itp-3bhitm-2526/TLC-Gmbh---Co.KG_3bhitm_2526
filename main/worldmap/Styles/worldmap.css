@@ -54,9 +54,7 @@ body {
     background-color: #FAC05A;
     color: #28192F;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    text-align: center;
 
     height: auto;
 }
