@@ -1,31 +1,20 @@
-José (Dorf-Seite, 15 Sek. Audio):
 Hallo! Ich bin José aus meinem kleinen Dorf in Guatemala.
 Hier ist alles ganz trocken und staubig. Früher haben unsere Maisfelder immer genug Regen bekommen und wir hatten genug zu essen.
 Aber jetzt regnet es fast gar nicht mehr. Die Sonne brennt so stark, dass meine Pflanzen braun werden und nichts wächst.
 Mein Brunnen ist fast leer und meine Familie hat nur noch Essen für zwei Tage.
 Wenn du bei deiner Dusche Wasser sparst, habe ich hier selbst mehr Wasser für meine Felder!
 
-[Audio José sprechen hören] [Button Ja, ich spar Wasser für José]
-
-José (Dusche-Seite, 10 Sek. Audio):
 Danke, dass du mir helfen willst! In meinem Dorf müssen wir jeden Tropfen zählen.
-Der Brunnen wird immer leerer und meine Pflanzen brauchen Wasser. 
+Der Brunnen wird immer leerer und meine Pflanzen brauchen Wasser.
 Dusche jetzt bitte ganz kurz. Wenn du Wasser sparst, habe ich selbst mehr für meine Felder!
 
-Wie lang hast du echt geduscht? [___ Minuten] [Fertig geduscht Button]
-
-Antwort unter 3 Min (12 Sek. Audio):
-Danke! Du hast unter 3 Minuten geduscht – super! 
-Weil du Wasser gespart hast, habe ich jetzt mehr für meine Felder. 
+Danke! Du hast unter 3 Minuten geduscht – super!
+Weil du Wasser gespart hast, habe ich jetzt mehr für meine Felder.
 Der Mais wird wieder grün wachsen und meine Familie kann essen. Du hilfst mir wirklich!
 
-Antwort 3-5 Min (8 Sek. Audio):
-Gut gemacht! Du hast schon ein bisschen Wasser gespart. 
-Meine Felder sind jetzt nicht mehr ganz so staubig. 
+Gut gemacht! Du hast schon ein bisschen Wasser gespart.
+Meine Felder sind jetzt nicht mehr ganz so staubig.
 Morgen versuch noch kürzer zu duschen – das hilft mir immer mehr!
 
-Antwort über 5 Min (7 Sek. Audio):
 Das war heute etwas lang. Morgen versuch mal 3 Minuten oder weniger. 
 Jede kurze Dusche hilft mir, mehr Wasser für meine Pflanzen zu haben!
-
-[Button Zurück zu José]
