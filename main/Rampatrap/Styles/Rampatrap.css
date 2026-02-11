@@ -16,7 +16,7 @@ body {
     padding: 0;
 }
 
-.background {
+#background {
     position: absolute;
     width: auto;
     height: 100%;
@@ -28,11 +28,13 @@ body {
     position: absolute;
     z-index: 2;
     height: auto;
+    transform: translate(50%, 50%);
 }
 
 #rampatrapArm {
     transform: rotate(350deg);
     transform-origin: top left;
+    transform: translate(0%, 0%);
     animation: rotateArm 1.5s linear infinite;
 }
 
@@ -63,9 +65,10 @@ body {
 
 #decisionBox {
     position: fixed;
-    display: none;
+    /*display: none;*/
     top: 5vw;
     right: 5vw;
+    animation: blendIn 0.5s linear;
 }
 
 #bike{
