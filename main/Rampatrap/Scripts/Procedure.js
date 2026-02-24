@@ -81,22 +81,20 @@ function introductionVillageScene() {
             }
         );
     }
-
-
-
-    function wrongDecisionScene() {
-    loadWrongDecisionScene();
-    document.getElementById("decisionBox").style.display = "none";
-
-    playAudio('audios/rampatrapWrongDecision.mp3', () => {
-        document.getElementById("decisionBox").style.display = "block";
-        document.getElementById("decisionBox").innerHTML =
-            "Klicke auf das Fahrrad um keine schädlichen Abgase in die Luft zu stoßen!";
-    audio.addEventListener('ended', function () {
-        houseScene();
-    });
-
 }
+    function wrongDecisionScene() {
+            loadWrongDecisionScene();
+            document.getElementById("decisionBox").style.display = "none";
+
+            playAudio('audios/rampatrapWrongDecision.mp3', () => {
+                document.getElementById("decisionBox").style.display = "block";
+                document.getElementById("decisionBox").innerHTML =
+                    "Klicke auf das Fahrrad um keine schädlichen Abgase in die Luft zu stoßen!";
+            audio.addEventListener('ended', function () {
+                houseScene();
+            });
+        }
+    }
 
 function explanationVillageScene() {
     changeBackground("SVGs/village.svg", 1920, 1080);
