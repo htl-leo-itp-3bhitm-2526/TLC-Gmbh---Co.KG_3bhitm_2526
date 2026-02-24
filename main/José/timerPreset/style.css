@@ -1,0 +1,15 @@
+body { 
+  font-family: sans-serif; 
+}
+
+.bar-wrap { 
+  width: 200px; 
+  height: 10px; 
+  border: 1px solid #000; 
+}
+
+.bar { 
+  height: 100%; 
+  width: 0; 
+  background: #000; 
+}
