@@ -4,19 +4,19 @@
   <defs>
     <style>
       .st0 {
-        fill: #2abbd0;
-      }
-
-      .st1 {
-        fill: #fac05a;
-      }
-
-      .st2 {
         fill: #fff;
       }
 
+      .st1 {
+        fill: none;
+      }
+
+      .st2 {
+        fill: #7dbefa;
+      }
+
       .st3 {
-        fill: #dbcfb1;
+        fill: #b0becf;
       }
 
       .st4 {
@@ -24,62 +24,75 @@
       }
 
       .st5 {
-        fill: #72bbf2;
+        fill: #2abbd0;
       }
 
       .st6 {
-        fill: #7dbefa;
+        fill: #72bbf2;
       }
 
       .st7 {
+        fill: #fac05a;
+      }
+
+      .st8 {
         clip-path: url(#clippath);
+      }
+
+      .st9 {
+        fill: #dbcfb1;
       }
     </style>
     <clipPath id="clippath">
-      <rect class="st4" x="-3.2" y="0" width="1920" height="1080"/>
+      <rect class="st1" x="-3.2" width="1920" height="1080"/>
     </clipPath>
   </defs>
-  <rect class="st4" x="-3.2" y="0" width="1920" height="1080"/>
-  <g class="st7">
+  <rect class="st4" x="-3.2" width="1920" height="1080"/>
+  <g class="st8">
     <g>
-      <rect class="st0" x="-3.2" y="748.2" width="1919.8" height="331.8"/>
-      <rect class="st2" x="948.7" y="748.2" width="7.9" height="331.9"/>
-      <rect class="st2" x="1144.7" y="748.2" width="7.9" height="331.9" transform="translate(-31.2 40.6) rotate(-2)"/>
-      <rect class="st2" x="1349.6" y="748" width="7.9" height="331.9" transform="translate(-46 72.1) rotate(-3)"/>
-      <rect class="st2" x="1551.8" y="747.7" width="7.9" height="331.9" transform="translate(-59.9 110.7) rotate(-4)"/>
-      <rect class="st2" x="1747.3" y="747.9" width="7.9" height="331.9" transform="translate(-73 156.1) rotate(-5)"/>
-      <rect class="st2" x="763.1" y="748.3" width="7.9" height="331.9" transform="translate(1501.6 1854.7) rotate(-178)"/>
-      <rect class="st2" x="558.1" y="748.1" width="7.9" height="331.9" transform="translate(1075.6 1856.2) rotate(-177)"/>
-      <rect class="st2" x="355.9" y="747.9" width="7.9" height="331.9" transform="translate(655.2 1850.5) rotate(-176)"/>
-      <rect class="st2" x="160.5" y="748" width="7.9" height="331.9" transform="translate(248.5 1838.7) rotate(-175)"/>
-      <rect class="st2" x="953.6" y="26.7" width="7.9" height="1918.1" transform="translate(-28.2 1943.3) rotate(-90)"/>
-      <rect class="st2" x="953.6" y="-61.8" width="7.9" height="1918.1" transform="translate(60.2 1854.8) rotate(-90)"/>
-      <rect class="st2" x="953.6" y="-140.6" width="7.9" height="1918.1" transform="translate(139.1 1776) rotate(-90)"/>
-      <rect class="st1" x="-3.3" y="0" width="1920.2" height="824.7"/>
+      <g>
+        <rect class="st5" x="-3.2" y="748.2" width="1919.8" height="331.8"/>
+        <rect class="st0" x="948.7" y="748.2" width="7.9" height="331.9"/>
+        <rect class="st0" x="1144.7" y="748.2" width="7.9" height="331.9" transform="translate(-31.2 40.6) rotate(-2)"/>
+        <rect class="st0" x="1349.6" y="748" width="7.9" height="331.9" transform="translate(-46 72.1) rotate(-3)"/>
+        <rect class="st0" x="1551.8" y="747.7" width="7.9" height="331.9" transform="translate(-59.9 110.8) rotate(-4)"/>
+        <rect class="st0" x="1747.3" y="747.9" width="7.9" height="331.9" transform="translate(-73 156.1) rotate(-5)"/>
+        <rect class="st0" x="601" y="910.3" width="331.9" height="7.9" transform="translate(-173.5 1648.8) rotate(-88)"/>
+        <rect class="st0" x="396.2" y="910" width="331.9" height="7.9" transform="translate(-380 1427.5) rotate(-87)"/>
+        <rect class="st0" x="194" y="909.8" width="331.9" height="7.9" transform="translate(-576.7 1209.1) rotate(-86)"/>
+        <rect class="st0" x="-1.6" y="909.9" width="331.9" height="7.9" transform="translate(-760.4 998) rotate(-85)"/>
+        <rect class="st0" x="-1.5" y="981.8" width="1918.1" height="7.9"/>
+        <rect class="st0" x="-1.6" y="893.3" width="1918.1" height="7.9"/>
+        <rect class="st0" x="-1.5" y="814.5" width="1918.1" height="7.9"/>
+        <rect class="st7" x="-3.3" width="1920.2" height="824.7"/>
+      </g>
+      <rect class="st2" x="424.3" y="163" width="864.1" height="481.9"/>
+      <rect class="st9" x="422.7" y="642.6" width="865.7" height="236.4"/>
+      <polygon class="st9" points="1409.7 822.9 1289.2 878.8 1289.5 641.2 1409.2 578 1409.7 822.9"/>
+      <rect class="st4" x="422.5" y="642.7" width="867" height="8.5"/>
+      <rect class="st4" x="422.9" y="690.3" width="866.5" height="8.5"/>
+      <rect class="st4" x="421.2" y="738.8" width="867" height="8.5"/>
+      <rect class="st4" x="421.2" y="783" width="867" height="8.5"/>
+      <rect class="st4" x="422.6" y="830.7" width="867" height="8.5"/>
+      <rect class="st4" x="507.9" y="644.3" width="8.5" height="236.1"/>
+      <rect class="st4" x="612.3" y="643.7" width="8.5" height="236.1"/>
+      <rect class="st4" x="719.5" y="643.4" width="8.5" height="236.1"/>
+      <rect class="st4" x="821.5" y="642.4" width="8.5" height="236.1"/>
+      <rect class="st4" x="932" y="643.1" width="8.5" height="236.1"/>
+      <rect class="st4" x="1042.6" y="641.9" width="8.5" height="236.1"/>
+      <rect class="st4" x="1169.6" y="643.3" width="8.5" height="236.1"/>
+      <rect class="st4" x="1280.7" y="642.7" width="8.5" height="236.1"/>
+      <polygon class="st4" points="1402 634.5 1286.9 699.2 1286.9 690.7 1402 627.9 1402 634.5"/>
+      <polygon class="st4" points="1409.2 578 1409.7 822.9 1401.7 826.7 1401.8 581.9 1409.2 578"/>
+      <polygon class="st4" points="1404.7 587.3 1289.6 652 1289.6 643.5 1404.7 580.7 1404.7 587.3"/>
+      <polygon class="st6" points="1409.2 578 1288.4 643.7 1288.9 161.3 1390.4 160.7 1409.2 578"/>
+      <polygon class="st4" points="1404.9 682.7 1289.8 747.4 1289.8 738.9 1404.9 676.1 1404.9 682.7"/>
+      <polygon class="st4" points="1404.9 725.8 1289.8 790.5 1289.8 782 1404.9 719.2 1404.9 725.8"/>
+      <polygon class="st4" points="1405.4 773.4 1290.4 838.1 1290.4 829.6 1405.4 766.8 1405.4 773.4"/>
+      <polygon class="st4" points="1349.3 615.8 1349.3 851.9 1342.2 854.9 1340.8 615.8 1349.3 615.8"/>
     </g>
-    <rect class="st6" x="424.3" y="163" width="864.1" height="481.9"/>
-    <rect class="st3" x="422.7" y="642.6" width="865.7" height="236.4"/>
-    <polygon class="st3" points="1409.7 822.9 1289.2 878.8 1289.5 641.2 1409.2 578 1409.7 822.9"/>
-    <rect class="st4" x="422.5" y="642.7" width="867" height="8.5"/>
-    <rect class="st4" x="422.9" y="690.3" width="866.5" height="8.5"/>
-    <rect class="st4" x="421.2" y="738.8" width="867" height="8.5"/>
-    <rect class="st4" x="421.2" y="783" width="867" height="8.5"/>
-    <rect class="st4" x="422.6" y="830.7" width="867" height="8.5"/>
-    <rect class="st4" x="394.1" y="758.1" width="236.1" height="8.5" transform="translate(-250.2 1274.5) rotate(-90)"/>
-    <rect class="st4" x="498.5" y="757.5" width="236.1" height="8.5" transform="translate(-145.2 1378.3) rotate(-90)"/>
-    <rect class="st4" x="605.7" y="757.2" width="236.1" height="8.5" transform="translate(-37.7 1485.2) rotate(-90)"/>
-    <rect class="st4" x="707.7" y="756.2" width="236.1" height="8.5" transform="translate(65.3 1586.2) rotate(-90)"/>
-    <rect class="st4" x="818.3" y="756.9" width="236.1" height="8.5" transform="translate(175.1 1697.5) rotate(-90)"/>
-    <rect class="st4" x="928.8" y="755.7" width="236.1" height="8.5" transform="translate(286.9 1806.8) rotate(-90)"/>
-    <rect class="st4" x="1055.8" y="757" width="236.1" height="8.5" transform="translate(412.6 1935.2) rotate(-90)"/>
-    <rect class="st4" x="1166.9" y="756.5" width="236.1" height="8.5" transform="translate(524.2 2045.7) rotate(-90)"/>
-    <polygon class="st4" points="1402 634.5 1286.9 699.2 1286.9 690.7 1402 627.9 1402 634.5"/>
-    <polygon class="st4" points="1409.2 578 1409.7 822.9 1401.7 826.7 1401.8 581.9 1409.2 578"/>
-    <polygon class="st4" points="1404.7 587.3 1289.6 652 1289.6 643.5 1404.7 580.7 1404.7 587.3"/>
-    <polygon class="st5" points="1409.2 578 1288.4 643.7 1288.9 161.3 1390.4 160.7 1409.2 578"/>
-    <polygon class="st4" points="1404.9 682.7 1289.8 747.4 1289.8 738.9 1404.9 676.1 1404.9 682.7"/>
-    <polygon class="st4" points="1404.9 725.8 1289.8 790.5 1289.8 782 1404.9 719.2 1404.9 725.8"/>
-    <polygon class="st4" points="1405.4 773.4 1290.4 838.1 1290.4 829.6 1405.4 766.8 1405.4 773.4"/>
-    <polygon class="st4" points="1349.3 615.8 1349.3 851.9 1342.2 854.9 1340.8 615.8 1349.3 615.8"/>
   </g>
+  <polygon class="st3" points="960 642.5 770.7 642.5 788.3 368.2 940.3 368.2 960 642.5"/>
+  <circle class="st3" cx="865.4" cy="271.2" r="75"/>
+  <rect class="st3" x="851.3" y="319.5" width="30" height="74"/>
 </svg>
