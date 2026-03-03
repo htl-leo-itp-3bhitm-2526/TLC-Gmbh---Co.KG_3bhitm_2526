@@ -1,67 +1,73 @@
+// ================= OBJECTS =================
+
 function addObject(id, img, right, bottom, width) {
-    objects.push(
-        {
-            id: id,
-            img: img,
-            right: right,
-            bottom: bottom,
-            width: width,
-        }
-    );
+    objects.push({
+        id,
+        img,
+        right,
+        bottom,
+        width
+    });
 
-    loadHTMLs(objects, textBoxes);
-    scaleElements(objects, textBoxes);
-}
-
-function addTextBox(id, text, width, fontSize) {
-
-    textBoxes.push(
-        {
-            id: id,
-            text: text,
-            width: width,
-            fontSize: fontSize,
-        }
-    );
-
-    loadHTMLs(objects, textBoxes);
-    scaleElements(objects, textBoxes);
+    loadHTMLs();
+    registerObjects(objects);
 }
 
 function deleteObject(id) {
+    objects = objects.filter(o => o.id !== id);
 
-    let newList = [];
+    loadHTMLs();
+    registerObjects(objects);
+}
 
-    for (let i = 0; i < objects.length; i++) {
-        if (objects[i].id !== id) {
-            newList.push(objects[i]);
-        }
-    }
+// ================= TEXTBOXES =================
 
-    objects = newList;
+function addTextBox(id, text, width, fontSize) {
+    textBoxes.push({
+        id,
+        text,
+        width,
+        fontSize
+    });
 
-    loadHTMLs(objects, textBoxes);
-    scaleElements(objects, textBoxes);
+    loadHTMLs();
+    registerTextBoxes(textBoxes);
 }
 
 function deleteTextBox(id) {
+    textBoxes = textBoxes.filter(t => t.id !== id);
 
-    let newList = [];
-
-    for (let i = 0; i < textBoxes.length; i++) {
-        if (textBoxes[i].id !== id) {
-            newList.push(textBoxes[i]);
-        }
-    }
-
-    textBoxes = newList;
-
-    loadHTMLs(objects, textBoxes);
-    scaleElements(objects, textBoxes);
+    loadHTMLs();
+    registerTextBoxes(textBoxes);
 }
 
-function changeBackground(img, W, H){
-    document.getElementById("background").src = img;
-    backgroundWidth = W;
-    backgroundHeight = H;
+// ================= BACKGROUND =================
+
+function changeBackground(img, width, height) {
+    const bg = document.getElementById("background");
+    if (!bg) return;
+
+    bg.src = img;
+    setBackgroundScale(width, height);
+}
+
+// ================= DOM BUILDER =================
+
+function loadHTMLs() {
+    const container = document.getElementById("elements");
+    if (!container) return;
+
+    container.innerHTML = "";
+
+    objects.forEach(o => {
+        container.innerHTML += `
+            <img id="${o.id}" class="object" src="${o.img}">
+        `;
+    });
+
+    textBoxes.forEach(t => {
+        container.innerHTML += `
+            <div class="textBox" id="${t.id}">${t.text}</div>
+        `;
+    });
 }
