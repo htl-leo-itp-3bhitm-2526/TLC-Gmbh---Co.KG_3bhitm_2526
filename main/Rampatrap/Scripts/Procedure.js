@@ -93,7 +93,7 @@ function introductionVillageScene() {
             audio.addEventListener('ended', function () {
                 houseScene();
             });
-        }
+        })
     }
 
 function explanationVillageScene() {
