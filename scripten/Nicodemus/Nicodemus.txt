@@ -27,3 +27,5 @@ Falsche Entscheidung (Kind wird im Minigame aufgehalten):
 	Für jede neue Plastikflasche wird Energie verbraucht und CO₂ ausgestoßen.
 	Das macht die Erde wärmer und bei uns bleibt die Salzpfanne leer.
 	Vielleicht willst du dich nochmal anders entscheiden?
+
+	Quelle: https://www.youtube.com/watch?v=Re2amZhsd1k&t=1s
