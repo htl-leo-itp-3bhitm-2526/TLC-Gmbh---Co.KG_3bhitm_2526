@@ -36,7 +36,6 @@ function scaleElements(objects, textBoxes) {
 
     //worlmap skalieren
     const background = document.getElementById("background");
-    if (!background) return;
     background.style.left = offX + "px";
     background.style.top = offY + "px";
     background.style.height = drawnH + "px";
@@ -71,15 +70,6 @@ function scaleTextBox(id, text, width, fontSize) {
     document.getElementById(id).style.borderRadius = (8 * scale) + "px";
 }
 
-let objects = [];
-
-let textBoxes = [];
-
-
-
-// Laden der layout Function
-addEventListener("resize", () => layout(objects, textBoxes));
-addEventListener("orientationchange", () => layout(objects, textBoxes));
 function loadHTMLs(objects, textBoxes){
     document.getElementById("elements").innerHTML = "";
     for (let o = 0; o < objects.length; o++) {
