@@ -5,12 +5,12 @@ Textpassage (in Nicodemus' Dorf, Lekgaba, Botswana):
 	bleibt das rohe Salz auf der Oberfläche zurück. Dann sammeln wir es, reinigen es und verkaufen es.
 	Das machen unsere Familien schon seit Generationen so.
 	Aber durch den Klimawandel regnet es immer seltener. Die Salzpfanne bleibt oft leer.
-	Ohne Regen gibt es kein Salz – und ohne Salz haben wir kein Einkommen und kein Essen.
+	Ohne Regen gibt es kein Salz, und ohne Salz haben wir kein Einkommen und kein Essen.
 	Patrick, einer unserer Bauern, sagt: Früher war das Salz reichlich da. Heute ist es fast nichts mehr.
 	Vielleicht kannst du uns helfen?
 
 Minigame (Vor dem Österreichischen Haus):
-	Stell dir vor: Du willst eine Flasche Wasser kaufen. Im Supermarkt gibt es zwei Möglichkeiten –
+	Stell dir vor: Du willst eine Flasche Wasser kaufen. Im Supermarkt gibt es zwei Möglichkeiten,
 	eine Plastikflasche aus dem Regal, oder du nimmst deine eigene Trinkflasche aus dem Rucksack
 	und füllst sie an der Wasserstation auf.
 	Klick auf die Plastikflasche oder auf die Trinkflasche und entscheide dich!
@@ -18,7 +18,7 @@ Minigame (Vor dem Österreichischen Haus):
 Richtige Entscheidung (Wieder in Nicodemus' Dorf):
 	Super Entscheidung! Wenn du deine eigene Flasche verwendest, wird viel weniger Plastik hergestellt.
 	Das spart Energie und das bedeutet weniger CO₂ in der Luft.
-	Wenn weniger CO₂ entsteht, wird die Erde langsamer wärmer – und bei uns in Botswana
+	Wenn weniger CO₂ entsteht, wird die Erde langsamer wärmer, und bei uns in Botswana
 	könnte es wieder mehr regnen. Dann füllt sich unsere Salzpfanne, und Patrick und seine Familie
 	haben wieder genug zu leben. Du hilfst uns wirklich!
 
