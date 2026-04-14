@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 248 192">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #a9a48d;
+      }
+
+      .cls-2 {
+        fill: #633b3f;
+      }
+
+      .cls-3 {
+        fill: #3f2323;
+      }
+
+      .cls-4 {
+        fill: #fff;
+      }
+
+      .cls-5 {
+        fill: #7c122b;
+      }
+
+      .cls-6 {
+        fill: #ebff8b;
+      }
+
+      .cls-7 {
+        fill: #abafb9;
+      }
+
+      .cls-8 {
+        fill: #28192f;
+      }
+    </style>
+  </defs>
+  <rect class="cls-1" width="248" height="192"/>
+  <ellipse class="cls-4" cx="30.05" cy="157.37" rx="20.41" ry="11.72"/>
+  <rect class="cls-2" x="9.64" y="180.05" width="9.07" height="11.95"/>
+  <rect class="cls-2" x="86.56" y="180.05" width="9.07" height="11.95"/>
+  <rect class="cls-5" y="162.66" width="117.17" height="17.39"/>
+  <rect class="cls-5" y="128.65" width="19.28" height="34.02"/>
+  <rect class="cls-3" x="205.62" y="88.96" width="42.38" height="103.04"/>
+  <rect class="cls-7" x="202" y="137.01" width="3.61" height="6.94"/>
+  <rect class="cls-8" x="117.17" width="5.1" height="39.69"/>
+  <path class="cls-6" d="M74.36,54.56c0-11.17,20.31-20.23,45.35-20.23s45.35,9.06,45.35,20.23"/>
+</svg>
