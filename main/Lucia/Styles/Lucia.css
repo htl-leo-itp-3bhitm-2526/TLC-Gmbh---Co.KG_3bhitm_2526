@@ -59,6 +59,25 @@ body {
     animation: blendIn 0.5s linear;
 }
 
+#luciaArm {
+    transform-origin: top right;
+    animation: rotateArmRight 1.5s linear infinite;
+}
+
+@keyframes rotateArmRight {
+    0% {
+        transform: rotate(-220deg);
+    }
+
+    50% {
+        transform: rotate(-200deg);
+    }
+
+    100% {
+        transform: rotate(-220deg);
+    }
+}
+
 .room {
     cursor: pointer;
 }

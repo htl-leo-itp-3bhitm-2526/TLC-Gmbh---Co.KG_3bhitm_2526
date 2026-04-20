@@ -18,7 +18,14 @@ introVillageScene();
 function introVillageScene() {
     changeBackground("SVGs/village.svg", 1920, 1080);
 
-    addObject("lucia", "SVGs/Lucia.svg", 1015, 1000, 230);
+    addObject("lucia", "SVGs/LuciaNoArm.svg", 1015, 1000, 230);
+    addObject("luciaArm", "SVGs/LuciaArm.svg", 920, 400, 50);
+
+    setTimeout(function() {
+        deleteObject("luciaArm");
+        deleteObject("lucia");
+        addObject("lucia", "SVGs/Lucia.svg", 1015, 1000, 230);
+    }, 3000);
 
     const audio = new Audio("../Rampatrap/audios/rampatrapVillageStartScene.mp3");
     audio.play();
