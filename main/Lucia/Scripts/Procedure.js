@@ -1,47 +1,17 @@
-let round = 0;
-const MAX_ROUNDS = 3;
 
-// right/bottom = Abstand vom rechten/unteren Rand des Hintergrunds (1920×843.6)
-// Die Positionswerte sind Annäherungswerte – bei Bedarf anpassen.
-const ROOM_CONFIGS = [
-    {
-        id: "attic",
-        lightSrc: "SVGs/attic.svg",
-        darkSrc:  "SVGs/atticDark.svg",
-        right: 1580, bottom: 900, width: 500,
-        figRight: 1598, figBottom: 857, figWidth: 100,
-    },
-    {
-        id: "room1",
-        lightSrc: "SVGs/room1.svg",
-        darkSrc:  "SVGs/room1Dark.svg",
-        right: 1475, bottom: 680, width: 250,
-        figRight: 1426, figBottom: 530, figWidth: 85,
-    },
-    {
-        id: "room2",
-        lightSrc: "SVGs/room2.svg",
-        darkSrc:  "SVGs/room2Dark.svg",
-        right: 1175, bottom: 680, width: 250,
-        figRight: 1099, figBottom: 530, figWidth: 85,
-    },
-    {
-        id: "room3",
-        lightSrc: "SVGs/room3.svg",
-        darkSrc:  "SVGs/room3Dark.svg",
-        right: 1475, bottom: 460, width: 250,
-        figRight: 1426, figBottom: 305, figWidth: 85,
-    },
-    {
-        id: "room4",
-        lightSrc: "SVGs/room4.svg",
-        darkSrc:  "SVGs/room4Dark.svg",
-        right: 1175, bottom: 460, width: 250,
-        figRight: 1099, figBottom: 305, figWidth: 85,
-    },
+let round = 0;
+let maxRounds = 3;
+
+const playerPositions = [
+    { roomId: "attic", right: 1150, bottom: 779},
+    { roomId: "room1", right: 1250, bottom: 573},
+    { roomId: "room2", right: 950, bottom: 573},
+    { roomId: "room3", right: 1250, bottom: 353},
+    { roomId: "room4", right: 950, bottom: 353},
 ];
 
-startGameRound();
+let randomPositions = [];
+houseExplanationScene();
 
 //------------------------------------------------------------------------------------
 
@@ -65,9 +35,13 @@ function houseExplanationScene() {
 
     deleteObject("lucia");
 
-    addObject("lucia", "SVGs/Lucia.svg", 1800, 450, 200);
+    addObject("lucia", "SVGs/Lucia.svg", 1800, 700, 200);
 
-
+    addObject("attic", "SVGs/attic.svg", 1580, 900, 500, "light");
+    addObject("room1", "SVGs/room1.svg", 1475, 680, 250, "light");
+    addObject("room2", "SVGs/room2.svg", 1175, 680, 250, "light");
+    addObject("room3", "SVGs/room3.svg", 1475, 460, 250, "light");
+    addObject("room4", "SVGs/room4.svg", 1175, 460, 250, "light");
 
     const audio = new Audio("../Rampatrap/audios/rampatrapHouseDecideScene.mp3");
     audio.play();
@@ -80,6 +54,8 @@ function houseExplanationScene() {
 
 //------------------------------------------------------------------------------------
 
+
+
 function startGameRound() {
     objects = [];
     textBoxes = [];
@@ -87,77 +63,82 @@ function startGameRound() {
 
     changeBackground("SVGs/house.svg", 1920, 843.6);
 
-    // 3 zufällige Räume mit Figur belegen
-    const shuffled = [...ROOM_CONFIGS].sort(() => Math.random() - 0.5);
-    const figureRoomIds = new Set(shuffled.slice(0, 3).map(r => r.id));
+    addObject("attic", "SVGs/attic.svg", 1580, 900, 500, "light");
+    addObject("room1", "SVGs/room1.svg", 1475, 680, 250, "light");
+    addObject("room2", "SVGs/room2.svg", 1175, 680, 250, "light");
+    addObject("room3", "SVGs/room3.svg", 1475, 460, 250, "light");
+    addObject("room4", "SVGs/room4.svg", 1175, 460, 250, "light");
 
-    // Zustand: alle Räume beginnen hell (Licht an)
-    const roomState = {};
-    ROOM_CONFIGS.forEach(r => { roomState[r.id] = "light"; });
-
-    // Alle Räume (hell) hinzufügen
-    ROOM_CONFIGS.forEach(r => {
-        addObject(r.id, r.lightSrc, r.right, r.bottom, r.width);
-    });
-
-    // Figuren in den belegten Räumen platzieren
-    ROOM_CONFIGS.forEach(r => {
-        if (figureRoomIds.has(r.id)) {
-            addObject(
-                "fig_" + r.id,
-                "../Rampatrap/SVGs/rampatrapNoArm.svg",
-                r.figRight, r.figBottom, r.figWidth
-            );
+    while (randomPositions.length < 2) {
+        let randomPosition = Math.floor(Math.random() * 5);
+        if (!randomPositions.includes(randomPosition)) {
+            randomPositions.push(randomPosition);
         }
-    });
-
-    addTextBox("instructionBox", "Schalte das Licht in leeren Räumen aus! (Runde " + (round + 1) + " / " + MAX_ROUNDS + ")", 650, 30);
-
-    // Klick-Handler für Räume setzen (nach letztem addObject)
-    ROOM_CONFIGS.forEach(r => {
-        const el = document.getElementById(r.id);
-        if (!el) return;
-        el.classList.add("room");
-        el.addEventListener("click", function () {
-            toggleRoom(r, roomState, figureRoomIds);
-        });
-    });
-}
-
-//------------------------------------------------------------------------------------
-
-function toggleRoom(room, roomState, figureRoomIds) {
-    const isLight = roomState[room.id] === "light";
-    roomState[room.id] = isLight ? "dark" : "light";
-
-    const el = document.getElementById(room.id);
-    if (el) {
-        el.src = roomState[room.id] === "light" ? room.lightSrc : room.darkSrc;
     }
 
-    checkWin(roomState, figureRoomIds);
+    for (let i = 0; i <= 1; i++) {
+        addObject("fig" + i, "../Rampatrap/SVGs/rampatrapNoArm.svg", playerPositions[randomPositions[i]].right, playerPositions[randomPositions[i]].bottom, 50);
+    }
+
+    addTextBox("instructionBox", "Schalte das Licht in leeren Räumen aus! (Runde " + (round + 1) + " / " + maxRounds + ")", 650, 30);
+
+    document.getElementById("attic").onclick = function() { changeLight(this); };
+    document.getElementById("room1").onclick = function() { changeLight(this); };
+    document.getElementById("room2").onclick = function() { changeLight(this); };
+    document.getElementById("room3").onclick = function() { changeLight(this); };
+    document.getElementById("room4").onclick = function() { changeLight(this); };
+
+
 }
 
 //------------------------------------------------------------------------------------
 
-function checkWin(roomState, figureRoomIds) {
-    const allCorrect = ROOM_CONFIGS.every(r => {
-        if (figureRoomIds.has(r.id)) return roomState[r.id] === "light";
-        return roomState[r.id] === "dark";
-    });
+function changeLight(object) {
+    if (object.classList.contains("light")) {
+        object.src = "SVGs/" + object.id + "Dark.svg";
+        object.classList.replace("light", "dark");
+    } else {
+        object.src = "SVGs/" + object.id + ".svg";
+        object.classList.replace("dark", "light");
+    }
+    checkWin();
+}
 
-    if (!allCorrect) return;
+//------------------------------------------------------------------------------------
 
-    deleteTextBox("instructionBox");
+function checkWin() {
+    let figRoom0 = playerPositions[randomPositions[0]].roomId;
+    let figRoom1 = playerPositions[randomPositions[1]].roomId;
+
+    let correct = true;
+
+    if (!document.getElementById(figRoom0).classList.contains("light")) correct = false;
+    if (!document.getElementById(figRoom1).classList.contains("light")) correct = false;
+
+    let allRooms = ["attic", "room1", "room2", "room3", "room4"];
+    for (let i = 0; i < allRooms.length; i++) {
+        if (allRooms[i] != figRoom0 && allRooms[i] != figRoom1) {
+            if (!document.getElementById(allRooms[i]).classList.contains("dark")) correct = false;
+        }
+    }
+
+    if (!correct) return;
+
+    document.getElementById("attic").onclick = null;
+    document.getElementById("room1").onclick = null;
+    document.getElementById("room2").onclick = null;
+    document.getElementById("room3").onclick = null;
+    document.getElementById("room4").onclick = null;
 
     const audio = new Audio("../Rampatrap/audios/rampatrapRightDecision.mp3");
     audio.play();
 
     audio.addEventListener("ended", function () {
         round++;
-        if (round >= MAX_ROUNDS) {
+        if (round >= maxRounds) {
             endVillageScene();
         } else {
+            randomPositions = [];
             startGameRound();
         }
     });
@@ -174,13 +155,6 @@ function endVillageScene() {
 
     addObject("lucia", "SVGs/Lucia.svg", 1015, 1000, 230);
 
-    addTextBox(
-        "speechBox",
-        "Danke, dass du meinen Lamas helfen willst! " +
-        "Durch das Ausschalten von Licht in leeren Räumen sparst du Strom. " +
-        "Dadurch schmelzen meine Gletscher langsamer und meine Lamas haben länger Wasser und grünes Gras.",
-        650, 45
-    );
 
     const audio = new Audio("../Rampatrap/audios/rampatrapRightDecision.mp3");
     audio.play();
