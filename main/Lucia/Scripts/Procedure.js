@@ -11,7 +11,7 @@ const playerPositions = [
 ];
 
 let randomPositions = [];
-houseExplanationScene();
+introVillageScene();
 
 //------------------------------------------------------------------------------------
 
@@ -131,17 +131,17 @@ function checkWin() {
     document.getElementById("room4").onclick = null;
 
     const audio = new Audio("../Rampatrap/audios/rampatrapRightDecision.mp3");
-    audio.play();
+    round++;
+    if (round >= maxRounds) {
+        endVillageScene();
+    } else {
+        audio.play();
 
-    audio.addEventListener("ended", function () {
-        round++;
-        if (round >= maxRounds) {
-            endVillageScene();
-        } else {
-            randomPositions = [];
-            startGameRound();
-        }
+        audio.addEventListener("ended", function () {
+        randomPositions = [];
+        startGameRound();
     });
+    }
 }
 
 //------------------------------------------------------------------------------------

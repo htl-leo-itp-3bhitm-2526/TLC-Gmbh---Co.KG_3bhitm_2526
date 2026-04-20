@@ -55,8 +55,8 @@ function layout() {
     const rampatrapArmBottom = 955;
     const rampatrapArmWidth = 25;
 
-    const luciaRight = 2200;
-    const luciaBottom = 660;
+    const luciaRight = 2050;
+    const luciaBottom = 820;
     const luciaWidth = 100;
 
     const introductionWidth = 550;
