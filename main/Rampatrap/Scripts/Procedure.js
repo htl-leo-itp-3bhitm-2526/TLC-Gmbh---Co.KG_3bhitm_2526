@@ -4,10 +4,11 @@ introductionVillageScene();
 //------------------------------------------------------------------------------------
 
 function introductionVillageScene() {
+
     changeBackground("SVGs/village.svg", 1920, 1080);
 
     addObject("rampatrap", "SVGs/rampatrapNoArm.svg", 1015, 1000, 230);
-    addObject("rampatrapArm", "SVGs/rampatrapArm.svg", 630, 340, 50);
+    addObject("rampatrapArm", "SVGs/rampatrapArm.svg", 640, 340, 50);
 
 
     const audio = new Audio('audios/rampatrapVillageStartScene.mp3');
@@ -87,9 +88,8 @@ function wrongDecisionScene() {
 function RightDecisionScene() {
     deleteObject("car");
     deleteObject("bike");
-    deleteObject("rampatrap");
-    deleteTextBox("decisionBox");
-    deleteTextBox("rampatrap");
+    deleteTextBox("decisionBox")
+    deleteTextBox("rampatrap")
 
     changeBackground("SVGs/village.svg", 1920, 1080);
     addObject("rampatrap", "SVGs/rampatrap.svg", 1015, 1000, 230);
