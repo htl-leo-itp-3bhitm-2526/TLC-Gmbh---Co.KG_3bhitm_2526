@@ -1,0 +1,65 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
+}
+
+.scene {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: black;
+    margin: 0;
+    padding: 0;
+}
+
+#background {
+    position: absolute;
+    width: auto;
+    height: 100%;
+    object-fit: cover;
+    margin: 0;
+}
+
+.object {
+    position: absolute;
+    z-index: 2;
+    height: auto;
+    transform: translate(50%, 50%);
+}
+
+.textBox {
+    background-color: #FAC05A;
+    color: #28192F;
+    text-align: center;
+    height: auto;
+    z-index: 2;
+}
+
+#speechBox {
+    position: fixed;
+    top: 5vw;
+    right: 5vw;
+    animation: blendIn 0.5s linear;
+}
+
+#instructionBox {
+    position: fixed;
+    top: 5vw;
+    right: 5vw;
+    animation: blendIn 0.5s linear;
+}
+
+#feedbackBox {
+    position: fixed;
+    top: 5vw;
+    right: 5vw;
+    animation: blendIn 0.5s linear;
+}
+
+.room {
+    cursor: pointer;
+}
+

@@ -43,6 +43,7 @@ function layout() {
     //Objekte anlegen
     const rampatrap = document.getElementById("rampatrap");
     const rampatrapArm = document.getElementById("rampatrapArm");
+    const lucia = document.getElementById("lucia");
     const introduction = document.getElementById("introduction");
 
     //Stats der Objekte
@@ -54,6 +55,10 @@ function layout() {
     const rampatrapArmBottom = 955;
     const rampatrapArmWidth = 25;
 
+    const luciaRight = 2200;
+    const luciaBottom = 660;
+    const luciaWidth = 100;
+
     const introductionWidth = 550;
     const introductionTextSize = 50;
     const introductionBorderSize = 8;
@@ -62,6 +67,7 @@ function layout() {
     // Objekte laden
     loadObjects(rampatrap, rampatrapRight, rampatrapBottom, rampatrapWidth);
     loadObjects(rampatrapArm, rampatrapArmRight, rampatrapArmBottom, rampatrapArmWidth);
+    loadObjects(lucia, luciaRight, luciaBottom, luciaWidth);
     loadTextBox(introduction, introductionWidth, introductionTextSize, introductionBorderSize, introductionborderRadius);
 }
 
