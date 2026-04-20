@@ -19,7 +19,7 @@ function introVillageScene() {
     changeBackground("SVGs/village.svg", 1920, 1080);
 
     addObject("lucia", "SVGs/LuciaNoArm.svg", 1015, 1000, 230);
-    addObject("luciaArm", "SVGs/LuciaArm.svg", 920, 400, 50);
+    addObject("luciaArm", "SVGs/LuciaArm.svg", 900, 500, 50);
 
     setTimeout(function() {
         deleteObject("luciaArm");
@@ -84,7 +84,7 @@ function startGameRound() {
     }
 
     for (let i = 0; i <= 1; i++) {
-        addObject("fig" + i, "../Rampatrap/SVGs/rampatrapNoArm.svg", playerPositions[randomPositions[i]].right, playerPositions[randomPositions[i]].bottom, 50);
+        addObject("fig" + i, "../Rampatrap/SVGs/rampatrapNoArm.svg", playerPositions[randomPositions[i]].right, playerPositions[randomPositions[i]].bottom, 50, "figur");
     }
 
     addTextBox("instructionBox", "Schalte das Licht in leeren Räumen aus! (Runde " + (round + 1) + " / " + maxRounds + ")", 650, 30);

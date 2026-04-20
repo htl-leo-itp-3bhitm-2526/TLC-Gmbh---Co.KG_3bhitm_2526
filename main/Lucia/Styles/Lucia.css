@@ -60,6 +60,7 @@ body {
 }
 
 #luciaArm {
+    transform: rotate(-220deg);
     transform-origin: top right;
     animation: rotateArmRight 1.5s linear infinite;
 }
@@ -82,3 +83,6 @@ body {
     cursor: pointer;
 }
 
+.figur{
+    pointer-events: none;
+}
