@@ -84,7 +84,7 @@ function startGameRound() {
     }
 
     for (let i = 0; i <= 1; i++) {
-        addObject("fig" + i, "../Rampatrap/SVGs/rampatrapNoArm.svg", playerPositions[randomPositions[i]].right, playerPositions[randomPositions[i]].bottom, 50, "figur");
+        addObject("fig" + i, "../Rampatrap/SVGs/rampatrap.svg", playerPositions[randomPositions[i]].right, playerPositions[randomPositions[i]].bottom, 50, "figur");
     }
 
     addTextBox("instructionBox", "Schalte das Licht in leeren Räumen aus! (Runde " + (round + 1) + " / " + maxRounds + ")", 650, 30);
