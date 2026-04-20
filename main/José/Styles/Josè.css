@@ -31,23 +31,22 @@ body {
     transform: translate(50%, 50%);
 }
 
-#rampatrapArm {
-    transform: rotate(350deg);
+#joseArm {
     transform-origin: top left;
     animation: rotateArm 1.5s linear infinite;
 }
 
 @keyframes rotateArm {
     0% {
-        transform: rotate(220deg);
+        transform: rotate(140deg);
     }
 
     50% {
-        transform: rotate(200deg);
+        transform: rotate(120deg);
     }
 
     100% {
-        transform: rotate(220deg);
+        transform: rotate(140deg);
     }
 }
 
@@ -70,39 +69,31 @@ body {
     animation: blendIn 0.5s linear;
 }
 
-#bike{
-    padding: 1.5vw;
-    border-radius: 50px;
+#showerHand1{
+    transform: scaleX(-1);
+    transform: translate(0%, 0%);
+    animation: wash 1.5s linear infinite;
 }
 
-#car{
-    padding: 1.5vw;
-    border-radius: 50px;
+#showerHand2{
+    transform: translate(50%, 50%);
+    animation: wash 1.5s linear infinite;
 }
 
-@keyframes orangeAnimation {
+@keyframes wash {
     0% {
-        background-color: #cf573c00;
+        transform: rotate(140deg);
     }
+
     50% {
-        background-color: #cf573c;
+        transform: rotate(120deg);
     }
+
     100% {
-        background-color: #cf573c00;
+        transform: rotate(140deg);
     }
 }
 
-@keyframes purpleAnimation {
-    0% {
-        background-color: #40275100;
-    }
-    50% {
-        background-color: #402751;
-    }
-    100% {
-        background-color: #40275100;
-    }
-}
 
 
 @keyframes blendIn{
