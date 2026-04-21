@@ -27,7 +27,7 @@ function introVillageScene() {
         addObject("lucia", "SVGs/Lucia.svg", 1015, 1000, 230);
     }, 3000);
 
-    const audio = new Audio("../Rampatrap/audios/rampatrapVillageStartScene.mp3");
+    const audio = new Audio("audios/LuciaStart.mp3");
     audio.play();
 
     audio.addEventListener("ended", function () {
@@ -50,7 +50,7 @@ function houseExplanationScene() {
     addObject("room3", "SVGs/room3.svg", 1475, 460, 250, "light");
     addObject("room4", "SVGs/room4.svg", 1175, 460, 250, "light");
 
-    const audio = new Audio("../Rampatrap/audios/rampatrapHouseDecideScene.mp3");
+    const audio = new Audio("audios/LuciaIntroduction.mp3");
     audio.play();
 
     audio.addEventListener("ended", function () {
@@ -137,7 +137,7 @@ function checkWin() {
     document.getElementById("room3").onclick = null;
     document.getElementById("room4").onclick = null;
 
-    const audio = new Audio("../Rampatrap/audios/rampatrapRightDecision.mp3");
+    const audio = new Audio("audios/LuciaGut.mp3");
     round++;
     if (round >= maxRounds) {
         endVillageScene();
@@ -145,9 +145,9 @@ function checkWin() {
         audio.play();
 
         audio.addEventListener("ended", function () {
-        randomPositions = [];
-        startGameRound();
-    });
+            randomPositions = [];
+            startGameRound();
+        });
     }
 }
 
@@ -163,7 +163,7 @@ function endVillageScene() {
     addObject("lucia", "SVGs/Lucia.svg", 1015, 1000, 230);
 
 
-    const audio = new Audio("../Rampatrap/audios/rampatrapRightDecision.mp3");
+    const audio = new Audio("audios/LuciaSuper.mp3");
     audio.play();
 
     audio.addEventListener("ended", function () {
