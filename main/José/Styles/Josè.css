@@ -105,3 +105,65 @@ body {
     }
 }
 
+#timerContainer {
+    position: fixed;
+    bottom: 8vh;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #FAC05A;
+    border: 4px solid #FED880;
+    border-radius: 16px;
+    padding: 2vh 3vw;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2vh;
+    animation: blendIn 0.4s linear;
+}
+
+#timerDisplay {
+    font-size: 4vh;
+    color: #28192F;
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
+}
+
+.timerBarWrap {
+    width: 30vw;
+    height: 1.5vh;
+    background: #28192F;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.timerBar {
+    height: 100%;
+    width: 0%;
+    background: #28192F;
+    border-radius: 8px;
+    transition: width 0.1s linear;
+}
+
+.timerButtons {
+    display: flex;
+    gap: 2vw;
+}
+
+.timerButtons button {
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
+    font-size: 2.5vh;
+    padding: 0.6vh 2vw;
+    border: 3px solid #28192F;
+    border-radius: 10px;
+    background: #28192F;
+    color: #FAC05A;
+    cursor: pointer;
+}
+
+.timerButtons button:disabled {
+    opacity: 0.4;
+    cursor: default;
+}
+

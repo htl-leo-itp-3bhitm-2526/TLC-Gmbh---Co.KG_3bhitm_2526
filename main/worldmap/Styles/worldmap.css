@@ -41,6 +41,11 @@ body {
     animation: rotateArmRight 1.5s linear infinite;
 }
 
+#joseArm {
+    transform-origin: top left;
+    animation: rotateArm 1.5s linear infinite;
+}
+
 @keyframes rotateArmRight {
     0% {
         transform: rotate(-220deg);
