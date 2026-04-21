@@ -4,7 +4,7 @@
   <defs>
     <style>
       .st0 {
-        fill: #ffe08b;
+        fill: #351544;
       }
 
       .st1 {
@@ -12,11 +12,11 @@
       }
 
       .st2 {
-        fill: #abafb9;
+        fill: #5f5f6e;
       }
 
       .st3 {
-        fill: #a9a48d;
+        fill: #abafb9;
       }
 
       .st4 {
@@ -24,11 +24,11 @@
       }
     </style>
   </defs>
-  <polygon class="st3" points="245.3 0 .3 199 490.3 199 245.3 0"/>
+  <polygon class="st0" points="245.3 0 .3 199 490.3 199 245.3 0"/>
   <rect class="st1" x="99.4" y="162.3" width="50.3" height="36.7"/>
   <rect class="st1" x="151.7" y="162.3" width="50.3" height="36.7"/>
   <rect class="st1" x="122.6" y="125.7" width="50.3" height="36.7"/>
-  <polygon class="st4" points="275.5 24.6 276.9 25.7 277.4 83.7 275.5 83.7 275.5 24.6"/>
-  <ellipse class="st0" cx="276.5" cy="90.3" rx="5.9" ry="11.5"/>
-  <path class="st2" d="M271.6,83.9c1.1-3.1,2.8-5.1,4.9-5.1s3.7,1.9,4.8,4.9"/>
+  <polygon class="st4" points="275.5 24.6 277.3 26 277.4 83.7 275.5 83.7 275.5 24.6"/>
+  <ellipse class="st2" cx="276.5" cy="90.3" rx="5.9" ry="11.5"/>
+  <path class="st3" d="M271.6,83.9c1.1-3.1,2.8-5.1,4.9-5.1s3.7,1.9,4.8,4.9"/>
 </svg>

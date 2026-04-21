@@ -1,0 +1,49 @@
+FANYAH
+
+UMSTÄNDE:
+Fanyah lebt in Madagaskar.
+Dort gibt es lange Trockenheit und sehr wenig Regen.
+Wasser ist knapp und für Familien besonders wichtig.
+
+DIALOG - EINFÜHRUNG:
+Hallo! Ich bin Fanyah aus Madagaskar.
+Bei uns regnet es oft viel zu wenig.
+Die Erde ist trocken und Wasser ist sehr wertvoll.
+Wenn es lange nicht regnet, leiden Felder, Pflanzen und Familien.
+Dann wird jeder einzelne Tropfen wichtig.
+Manchmal wünsche ich mir einfach nur genug Wasser für alle.
+Kannst du mir von Österreich aus helfen?
+
+DIALOG - AUFGABE:
+Hilf mir bitte beim Zähneputzen.
+Im Bad stehen Becher, Zahnbürste und Wasserhahn bereit.
+Nimm zuerst den Becher.
+Dann dreh den Wasserhahn ab, solange geputzt wird.
+Am Ende darf kurz abgespült werden.
+
+WENN MAN ES RICHTIG MACHT:
+Ganz toll!
+Du hast beim Zähneputzen Wasser gespart.
+Der Hahn war nicht die ganze Zeit offen.
+So geht viel weniger Wasser verloren.
+Jeder gesparte Tropfen ist wichtig.
+Danke, dass du mir hilfst.
+
+WENN MAN ES FALSCH MACHT:
+Ups, dabei ist noch zu viel Wasser gelaufen.
+Beim Zähneputzen muss der Wasserhahn nicht die ganze Zeit offen sein.
+Versuch es noch einmal.
+Nimm zuerst den Becher und dreh den Hahn zwischendurch ab.
+
+MINI-GAME:
+Titel: Die Zahnputz-Challenge
+Auf dem Bildschirm sieht man ein Waschbecken mit Becher, Zahnbürste und Wasserhahn.
+Das Spiel läuft in drei Schritten.
+Zuerst klickt das Kind auf den Becher.
+Dann klickt es auf den Wasserhahn, damit er ausgeht.
+Zum Schluss klickt es auf einen kurzen Spülknopf.
+Wenn alles in der richtigen Reihenfolge passiert, ist das Spiel geschafft.
+
+Quellen:
+https://www.unicefusa.org/stories/crisis-madagascar-linked-climate-change-and-covid-19
+https://x.com/UNICEF/status/1656086649426837505

@@ -1,0 +1,107 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
+}
+
+.scene {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: black;
+
+    margin: 0;
+    padding: 0;
+}
+
+#background {
+    position: absolute;
+    width: auto;
+    height: 100%;
+    object-fit: cover;
+    margin: 0;
+}
+
+.object {
+    position: absolute;
+    z-index: 2;
+    height: auto;
+    transform: translate(50%, 50%);
+}
+
+#joseArm {
+    transform-origin: top left;
+    animation: rotateArm 1.5s linear infinite;
+}
+
+@keyframes rotateArm {
+    0% {
+        transform: rotate(140deg);
+    }
+
+    50% {
+        transform: rotate(120deg);
+    }
+
+    100% {
+        transform: rotate(140deg);
+    }
+}
+
+.textBox {
+    background-color: #FAC05A;
+    color: #28192F;
+
+    text-align: center;
+
+    height: auto;
+
+    z-index: 2;
+}
+
+#decisionBox {
+    position: fixed;
+    /*display: none;*/
+    top: 5vw;
+    right: 5vw;
+    animation: blendIn 0.5s linear;
+}
+
+#showerHand1{
+    transform: scaleX(-1);
+    transform: translate(0%, 0%);
+    animation: wash 1.5s linear infinite;
+}
+
+#showerHand2{
+    transform: translate(50%, 50%);
+    animation: wash 1.5s linear infinite;
+}
+
+@keyframes wash {
+    0% {
+        transform: rotate(140deg);
+    }
+
+    50% {
+        transform: rotate(120deg);
+    }
+
+    100% {
+        transform: rotate(140deg);
+    }
+}
+
+
+
+@keyframes blendIn{
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+

@@ -1,0 +1,68 @@
+function addObject(id, img, right, bottom, width, cssClass=" ") {
+    objects.push(
+        {
+            id: id,
+            img: img,
+            right: right,
+            bottom: bottom,
+            width: width,
+            class: cssClass
+        }
+    );
+
+    loadHTMLs(objects, textBoxes);
+    scaleElements(objects, textBoxes);
+}
+
+function addTextBox(id, text, width, fontSize) {
+
+    textBoxes.push(
+        {
+            id: id,
+            text: text,
+            width: width,
+            fontSize: fontSize,
+        }
+    );
+
+    loadHTMLs(objects, textBoxes);
+    scaleElements(objects, textBoxes);
+}
+
+function deleteObject(id) {
+
+    let newList = [];
+
+    for (let i = 0; i < objects.length; i++) {
+        if (objects[i].id !== id) {
+            newList.push(objects[i]);
+        }
+    }
+
+    objects = newList;
+
+    loadHTMLs(objects, textBoxes);
+    scaleElements(objects, textBoxes);
+}
+
+function deleteTextBox(id) {
+
+    let newList = [];
+
+    for (let i = 0; i < textBoxes.length; i++) {
+        if (textBoxes[i].id !== id) {
+            newList.push(textBoxes[i]);
+        }
+    }
+
+    textBoxes = newList;
+
+    loadHTMLs(objects, textBoxes);
+    scaleElements(objects, textBoxes);
+}
+
+function changeBackground(img, W, H){
+    document.getElementById("background").src = img;
+    backgroundWidth = W;
+    backgroundHeight = H;
+}
