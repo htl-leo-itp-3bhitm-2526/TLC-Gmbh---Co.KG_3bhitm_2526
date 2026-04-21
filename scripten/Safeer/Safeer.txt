@@ -1,0 +1,50 @@
+SAFEER
+
+UMSTÄNDE:
+Safeer lebt in Pakistan.
+Starke Überschwemmungen haben seine Schule zerstört.
+Seitdem ist Lernen für viele Kinder schwieriger geworden.
+
+DIALOG - EINFÜHRUNG:
+Hallo! Ich bin Safeer aus Pakistan.
+Bei uns gab es starke Überschwemmungen.
+Das Wasser war überall und unsere Schule wurde kaputt.
+Viele Kinder konnten plötzlich nicht mehr normal lernen.
+Manche Schulsachen wurden nass, andere wurden weggespült.
+Wenn die Erde immer wärmer wird, gibt es öfter heftige Wetterereignisse.
+Das macht mir Angst.
+Kannst du mir von Österreich aus helfen?
+
+DIALOG - AUFGABE:
+Heute ist bei dir Waschtag.
+In deinem Zimmer liegen schmutzige Sachen herum.
+Hilf mir, Energie und Wasser zu sparen.
+Sammle die Wäsche in den Korb, bis genug für eine volle Waschmaschine da ist.
+Drücke danach auf das Eco-Programm.
+
+WENN MAN ES RICHTIG MACHT:
+Super gemacht!
+Du hast genug Wäsche gesammelt und die Maschine erst dann eingeschaltet.
+So lohnt sich der Waschgang viel mehr.
+Mit dem Eco-Programm sparst du zusätzlich Strom und Wasser.
+Wenn viele Kinder so handeln, wird die Erde etwas langsamer wärmer.
+Danke, dass du an mich denkst.
+
+WENN MAN ES FALSCH MACHT:
+Oh je, das war noch nicht ideal.
+Für eine fast leere Maschine wird trotzdem Strom und Wasser verbraucht.
+Versuch es noch einmal und warte, bis genug Wäsche im Korb liegt.
+Dann drück auf das Eco-Programm.
+
+MINI-GAME:
+Titel: Fülle die Waschmaschine richtig
+Auf dem Bildschirm liegen mehrere Kleidungsstücke im Zimmer verteilt.
+Das Kind klickt auf die schmutzigen Sachen.
+Jedes Teil wandert in den Wäschekorb.
+Wenn genug Wäsche gesammelt wurde, erscheint ein großer Eco-Knopf.
+Wird dieser angeklickt, ist das Spiel geschafft.
+
+
+Quelle:
+https://unfccc.int/sites/default/files/resource/SavetheChildrenPakistan_SafeerStory_WIMCaseStudy.pdf
+

@@ -1,0 +1,48 @@
+SAILOSI RAMATU
+
+UMSTÄNDE:
+Sailosi Ramatu lebt in Fidschi.
+Das Meer kommt dort immer näher an die Küste.
+Manche Orte wurden dadurch unsicher und Menschen mussten umziehen.
+
+DIALOG - EINFÜHRUNG:
+Hallo! Ich bin Sailosi aus Fidschi.
+Das Meer kommt bei uns immer näher.
+Manche Orte an der Küste sind nicht mehr sicher.
+Deshalb mussten Menschen aus unserem Dorf an einen besseren Ort ziehen.
+Wenn sich die Erde weiter erwärmt, steigt das Meer immer weiter.
+Das bedroht Inseln und Küstenorte wie meinen.
+Kannst du mir von Österreich aus helfen?
+
+DIALOG - AUFGABE:
+Es ist Abend und in deinem Wohnzimmer leuchten noch viele kleine Stand-by-Lichter.
+Obwohl niemand fernsieht oder spielt, verbrauchen die Geräte noch Strom.
+Mach mit bei der Nachtmission.
+Finde alle roten Lichter und schalte die Geräte ganz aus.
+Zum Schluss drückst du auf den großen Ausschalter der Steckdosenleiste.
+
+WENN MAN ES RICHTIG MACHT:
+Geschafft!
+Du hast alle unnötigen Lichter gefunden und alles ganz ausgeschaltet.
+So wird in der Nacht kein Strom verschwendet.
+Wenn weniger Strom verbraucht wird, entsteht auch weniger CO2.
+Das hilft Inseln und Küstenorten wie meinem Zuhause.
+Danke, dass du mir geholfen hast.
+
+WENN MAN ES FALSCH MACHT:
+Oh je, die Geräte leuchten noch weiter.
+So verbrauchen sie immer noch Strom, obwohl niemand sie braucht.
+Versuch es noch einmal.
+Finde alle roten Lichter und drück am Ende den Hauptschalter.
+
+MINI-GAME:
+Titel: Nachtmission im Wohnzimmer
+Der Bildschirm zeigt ein dunkles Wohnzimmer.
+Mehrere Geräte haben kleine rote Stand-by-Lichter.
+Das Kind klickt auf jedes rote Licht.
+Dadurch geht das jeweilige Gerät aus.
+Wenn alle roten Lichter verschwunden sind, erscheint der Hauptschalter der Steckdosenleiste.
+Wird dieser gedrückt, ist das Spiel geschafft.
+
+Quelle:
+https://www.abc.net.au/news/2023-04-06/fiji-climate-change-moving-villages-vunidogoloa/102186670
