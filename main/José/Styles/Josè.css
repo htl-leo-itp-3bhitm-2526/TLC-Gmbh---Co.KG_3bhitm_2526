@@ -140,7 +140,7 @@ body {
 .timerBar {
     height: 100%;
     width: 0%;
-    background: #28192F;
+    background: #FED880;
     border-radius: 8px;
     transition: width 0.1s linear;
 }

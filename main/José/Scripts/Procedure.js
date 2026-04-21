@@ -8,11 +8,14 @@ function introductionScene() {
     addObject("joseArm", "SVGs/JoséArm.svg", 1430, 740, 50);
 
     const audio = new Audio('audios/joseStart.mp3');
-    audio.play();
+    let sceneDone = false;
+    const goToBath = () => { if (!sceneDone) { sceneDone = true; bathScene(); } };
+
+    audio.addEventListener('ended', goToBath);
+    const p = audio.play();
+    if (p) p.catch(() => setTimeout(goToBath, 5000));
 
     setTimeout(introductionSadScene, 4000);
-
-    audio.addEventListener('ended', () => bathScene());
 }
 
 function introductionSadScene() {
@@ -32,14 +35,17 @@ function bathScene() {
     addObject("showerHand2", "SVGs/ShowerHand.svg", 1030, 840, 200);
 
     const audio = new Audio('audios/joseExplain.mp3');
-    audio.play();
+    let sceneDone = false;
+    const goToTimer = () => { if (!sceneDone) { sceneDone = true; showTimer(); } };
 
-    audio.addEventListener('ended', () => showTimer());
+    audio.addEventListener('ended', goToTimer);
+    const p = audio.play();
+    if (p) p.catch(() => setTimeout(goToTimer, 5000));
 }
 
 // ───────────────────────── TIMER ─────────────────────────
 
-const BAR_MS = 6000;
+const BAR_MS = 8000;
 let timerElapsed = 0, timerStart = 0, timerRunId = null;
 let barAnimId = null, barFrameStart = 0, barAccum = 0;
 
@@ -122,15 +128,15 @@ function resultScene(ms) {
     deleteObject("showerHand1");
     deleteObject("showerHand2");
 
-    // Good: within 500ms of target (6s), Medium: within 1500ms, Bad: everything else
-    const diff = Math.abs(ms - BAR_MS);
+    // overshoot only: positive = too late, negative/zero = early (always safe)
+    const overshoot = ms - BAR_MS;
     let audioFile;
-    if (diff <= 500) {
-        audioFile = 'audios/joseGood.mp3';
-    } else if (diff <= 1500) {
-        audioFile = 'audios/joseMedium.mp3';
+    if (overshoot <= 1000) {
+        audioFile = 'audios/joseGood.mp3';   // ≤9s (any early stop + up to 1s over)
+    } else if (overshoot <= 2500) {
+        audioFile = 'audios/joseMedium.mp3'; // 9s–10.5s
     } else {
-        audioFile = 'audios/joseBad.mp3';
+        audioFile = 'audios/joseBad.mp3';    // >10.5s
     }
 
     const audio = new Audio(audioFile);
