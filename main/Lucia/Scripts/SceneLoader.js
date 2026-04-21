@@ -1,4 +1,4 @@
-function addObject(id, img, right, bottom, width) {
+function addObject(id, img, right, bottom, width, cssClass=" ") {
     objects.push(
         {
             id: id,
@@ -6,6 +6,7 @@ function addObject(id, img, right, bottom, width) {
             right: right,
             bottom: bottom,
             width: width,
+            class: cssClass
         }
     );
 

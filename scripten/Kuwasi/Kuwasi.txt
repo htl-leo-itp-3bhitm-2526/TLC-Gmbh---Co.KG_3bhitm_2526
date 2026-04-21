@@ -1,0 +1,31 @@
+Textpassage (im Kakaowald, Elfenbeinküste):
+	Hallo! Wir sind die Brüder Kuwasi aus dem Regenwald der Elfenbeinküste in Westafrika.
+	Hier, tief im Wald, wachsen die Kakaobäume, dort wo Schokolade wirklich herkommt.
+	Unsere Familie pflegt diese Bäume seit Generationen. Die Kakaofrucht, die Schote, ist ein
+	Geschenk des Waldes. Früher gab es sie in Hülle und Fülle. Aber jetzt wird es immer schwieriger.
+	Es regnet zu viel, dann wieder zu wenig. Die Hitze nimmt zu. Und eine Krankheit namens
+	„Black Pod", die schwarze Schote, zerstört die Hälfte unserer Ernte.
+	Wenn der Kakaobaum sprechen könnte, würde er sagen: Passt auf mich auf.
+	Sonst verschwindet die Schokolade. Wirklich, für immer.
+	Kannst du uns helfen?
+
+Minigame (Vor dem Österreichischen Haus):
+	Stell dir vor: Du möchtest eine Schokolade kaufen. Im Supermarkt gibt es zwei zur Auswahl,
+	eine billige Schokolade ohne besonderes Zeichen auf der Verpackung,
+	oder eine Schokolade mit dem Fairtrade-Siegel. Die faire kostet ein bisschen mehr.
+	Klick auf die Schokolade ohne Siegel oder auf die Fairtrade-Schokolade und entscheide dich!
+
+Richtige Entscheidung (Wieder im Kakaowald bei den Brüdern Kuwasi):
+	Super Entscheidung! Wenn du faire Schokolade kaufst, bekommen Bauern wie wir
+	einen gerechten Preis für unsere Arbeit. Mit diesem Geld können wir besser auf unsere
+	Kakaobäume aufpassen, neue Bäume pflanzen und unseren Wald schützen.
+	Ein gesunder Wald hilft auch gegen den Klimawandel, Bäume speichern CO₂
+	und kühlen die Luft. Du hilfst uns und dem Regenwald gleichzeitig. Danke!
+
+Falsche Entscheidung (Kind wird im Minigame aufgehalten):
+	Bist du sicher? Sehr billige Schokolade bedeutet oft, dass Bauern wie wir
+	kaum etwas dafür bekommen. Dann haben wir kein Geld, um den Wald zu pflegen.
+	Ohne Wald wird es noch wärmer, und unsere Kakaobäume sterben noch schneller.
+	Vielleicht willst du dich nochmal anders entscheiden?
+
+	Quelle :https://www.youtube.com/watch?v=R2JX3B3H1KY

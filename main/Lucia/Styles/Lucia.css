@@ -1,0 +1,88 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
+}
+
+.scene {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: black;
+    margin: 0;
+    padding: 0;
+}
+
+#background {
+    position: absolute;
+    width: auto;
+    height: 100%;
+    object-fit: cover;
+    margin: 0;
+}
+
+.object {
+    position: absolute;
+    z-index: 2;
+    height: auto;
+    transform: translate(50%, 50%);
+}
+
+.textBox {
+    background-color: #FAC05A;
+    color: #28192F;
+    text-align: center;
+    height: auto;
+    z-index: 2;
+}
+
+#speechBox {
+    position: fixed;
+    top: 5vw;
+    right: 5vw;
+    animation: blendIn 0.5s linear;
+}
+
+#instructionBox {
+    position: fixed;
+    top: 5vw;
+    right: 5vw;
+    animation: blendIn 0.5s linear;
+}
+
+#feedbackBox {
+    position: fixed;
+    top: 5vw;
+    right: 5vw;
+    animation: blendIn 0.5s linear;
+}
+
+#luciaArm {
+    transform: rotate(-220deg);
+    transform-origin: top right;
+    animation: rotateArmRight 1.5s linear infinite;
+}
+
+@keyframes rotateArmRight {
+    0% {
+        transform: rotate(-220deg);
+    }
+
+    50% {
+        transform: rotate(-200deg);
+    }
+
+    100% {
+        transform: rotate(-220deg);
+    }
+}
+
+.room {
+    cursor: pointer;
+}
+
+.figur{
+    pointer-events: none;
+}

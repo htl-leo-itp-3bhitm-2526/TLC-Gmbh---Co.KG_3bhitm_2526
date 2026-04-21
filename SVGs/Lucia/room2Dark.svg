@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 248 192">
+  <!-- Generator: Adobe Illustrator 29.8.2, SVG Export Plug-In . SVG Version: 2.1.1 Build 3)  -->
+  <defs>
+    <style>
+      .st0 {
+        fill: #83404c;
+      }
+
+      .st1 {
+        fill: #351544;
+      }
+
+      .st2 {
+        fill: #fff;
+      }
+
+      .st3 {
+        fill: #9f705a;
+      }
+
+      .st4 {
+        fill: #7dbefa;
+      }
+
+      .st5 {
+        fill: #abafb9;
+      }
+
+      .st6 {
+        fill: #abafb9;
+      }
+
+      .st7 {
+        fill: #28192f;
+      }
+    </style>
+  </defs>
+  <rect class="st1" width="248" height="192"/>
+  <rect class="st3" x="10.2" y="150.2" width="5.7" height="41.8"/>
+  <rect class="st3" x="54.6" y="150.2" width="5.7" height="41.8"/>
+  <rect class="st3" x="4.9" y="145.1" width="60.5" height="10.2"/>
+  <rect class="st7" x="87.3" y="165.7" width="4.9" height="18.5"/>
+  <ellipse class="st7" cx="89.8" cy="166" rx="15.1" ry="7.2"/>
+  <polygon class="st7" points="98.4 192 95 192 87.3 184.3 90.8 180.9 98.4 192"/>
+  <rect class="st7" x="87.3" y="181" width="4.9" height="10.8"/>
+  <polygon class="st7" points="85 192.2 80.8 192 87.6 180.6 91.5 183.6 85 192.2"/>
+  <rect class="st2" x="196.8" y="81.3" width="37" height="76"/>
+  <rect class="st0" x="226.7" y="157.3" width="4.5" height="34.5"/>
+  <rect class="st0" x="199.9" y="157.3" width="3.4" height="34.5"/>
+  <polygon class="st6" points="233.9 82.3 196.8 82 196.8 81.3 233.9 81.3 233.9 82.3"/>
+  <rect class="st4" x="4.1" y="130.6" width="23.5" height="3.4" transform="translate(-114.4 104.2) rotate(-71)"/>
+  <rect class="st4" x="8.3" y="142.8" width="7.6" height="2.2"/>
+  <path class="st5" d="M16.4,129.8c-1.5-4.8.9-9.9,5.5-11.4s9.6,1.2,11.1,6"/>
+</svg>

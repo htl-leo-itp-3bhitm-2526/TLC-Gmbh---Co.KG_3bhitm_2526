@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 248 192">
+  <!-- Generator: Adobe Illustrator 29.8.2, SVG Export Plug-In . SVG Version: 2.1.1 Build 3)  -->
+  <defs>
+    <style>
+      .st0 {
+        fill: #5f5f6e;
+      }
+
+      .st1 {
+        fill: #3f2323;
+      }
+
+      .st2 {
+        fill: #351544;
+      }
+
+      .st3 {
+        fill: #fff;
+      }
+
+      .st4 {
+        fill: #7c122b;
+      }
+
+      .st5 {
+        fill: #633b3f;
+      }
+
+      .st6 {
+        fill: #abafb9;
+      }
+
+      .st7 {
+        fill: #28192f;
+      }
+    </style>
+  </defs>
+  <rect class="st2" width="248" height="192"/>
+  <ellipse class="st3" cx="30" cy="157.4" rx="20.4" ry="11.7"/>
+  <rect class="st5" x="9.6" y="180.1" width="9.1" height="11.9"/>
+  <rect class="st5" x="86.6" y="180.1" width="9.1" height="11.9"/>
+  <rect class="st4" y="162.7" width="117.2" height="17.4"/>
+  <rect class="st4" y="128.6" width="19.3" height="34"/>
+  <rect class="st1" x="205.6" y="89" width="42.4" height="103"/>
+  <rect class="st6" x="202" y="137" width="3.6" height="6.9"/>
+  <rect class="st7" x="117.2" width="5.1" height="39.7"/>
+  <path class="st0" d="M74.4,54.6c0-11.2,20.3-20.2,45.3-20.2s45.3,9.1,45.3,20.2"/>
+</svg>

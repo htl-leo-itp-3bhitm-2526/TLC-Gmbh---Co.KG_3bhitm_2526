@@ -74,7 +74,7 @@ function loadHTMLs(objects, textBoxes){
     document.getElementById("elements").innerHTML = "";
     for (let o = 0; o < objects.length; o++) {
         document.getElementById("elements").innerHTML += `
-            <img id="${objects[o].id}" class="object" src="${objects[o].img}">
+            <img id="${objects[o].id}" class="object ${objects[o].class}" src="${objects[o].img}">
         `;
     }
     for (let t = 0; t < textBoxes.length; t++) {

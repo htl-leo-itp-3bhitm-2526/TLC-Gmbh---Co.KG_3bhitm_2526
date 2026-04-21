@@ -1,0 +1,39 @@
+Textpassage (im Regenwald, Demokratische Republik Kongo):
+	Hallo! Ich heiße Amara und ich lebe mitten im Kongobecken, im größten Regenwald Afrikas.
+	Dieser Wald erstreckt sich über sechs Länder und ist fast fünfmal so groß wie ganz Frankreich!
+	Er ist das Zuhause von unzähligen Tieren, Pflanzen und Menschen wie mir.
+	Aber weißt du, was diesen Wald noch besonders macht? Er schützt die ganze Erde.
+	In seinen Bäumen und im Boden schlummern 91 Milliarden Tonnen Kohlenstoff,
+	das ist zehnmal so viel, wie alle Kraftwerke der Welt in einem Jahr in die Luft blasen.
+	Solange unser Wald steht, bleibt dieser Kohlenstoff gespeichert und die Erde kühler.
+	Aber jeden Tag werden hier Bäume gefällt. Im Jahr 2024 verschwanden allein in unserem Land
+	590.000 Hektar Regenwald, das ist größer als ganz Vorarlberg und Tirol zusammen!
+	Wenn die Bäume weg sind, gelangt all dieser gespeicherte Kohlenstoff in die Luft
+	und die Erde wird noch viel schneller wärmer. Das macht mir große Angst.
+	Vielleicht kannst du mir helfen?
+
+Minigame (Vor dem Österreichischen Haus):
+	Stell dir vor: Du brauchst ein neues Heft für die Schule.
+	Auf dem Tisch liegen zwei Hefte, eines aus normalem Papier,
+	und eines mit dem FSC-Zeichen. Das bedeutet: Das Holz dafür kam aus einem
+	verantwortungsvoll bewirtschafteten Wald, wo für jeden gefällten Baum
+	ein neuer gepflanzt wird.
+	Klick auf das normale Heft oder auf das FSC-Heft und entscheide dich!
+
+Richtige Entscheidung (Wieder bei Amara im Kongobecken):
+	Super Entscheidung! Wenn du Papier mit dem FSC-Zeichen kaufst,
+	wird dafür kein wertvoller Urwald abgeholzt.
+	Weniger Abholzung bedeutet, dass mehr Kohlenstoff in den Bäumen bleibt,
+	und die Erde sich langsamer erwärmt.
+	Unser Regenwald im Kongo kann dann weiter atmen, wachsen und die ganze Welt schützen.
+	Danke, dass du an unseren Wald denkst!
+
+Falsche Entscheidung (Kind wird im Minigame aufgehalten):
+	Bist du sicher? Für billiges Papier ohne Siegel werden oft wertvolle Wälder
+	wie meiner einfach abgeholzt, ohne dass neue Bäume nachgepflanzt werden.
+	Dann gelangt der gespeicherte Kohlenstoff in die Luft und es wird überall
+	auf der Erde wärmer. Auch bei dir in Österreich.
+	Vielleicht willst du dich nochmal anders entscheiden?
+
+---
+Quelle: https://www.youtube.com/watch?v=luxnD6NNzwA

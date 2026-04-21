@@ -7,18 +7,76 @@
     <title>Scene</title>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="Styles/worldmap.css">
+    <script src="../volume.js"></script>
     <script src="Scripts/Layout.js" defer></script>
     <script src="Scripts/Animation.js" defer></script>
 </head>
 <body>
     <div id="scene" class="scene">
         <img id="worldmap" class="bg" src="SVGs/worldmap.svg" alt="">
-        <a href="../Rampatrap/Rampatrap.html">
-            <img id="rampatrap" class="object" src="SVGs/rampatrapNoArm.svg" alt="">
+        <a href="../Rampatrap/Rampatrap.html" title="Rampatrap">
+            <img id="rampatrap" class="object" src="SVGs/rampatrapNoArm.svg" alt="Rampatrap">
         </a>
         <img id="rampatrapArm" class="object" src="SVGs/rampatrapArm.svg" alt="">
 
+        <a href="../Lucia/Lucia.html" title="Lucia">
+            <img id="lucia" class="object" src="SVGs/LuciaNoArm.svg" alt="Lucia">
+        </a>
+        <img id="luciaArm" class="object" src="SVGs/LuciaArm.svg" alt="">
+
         <div class="object textBox" id="introduction">Klicke auf eine Figur!</div>
     </div>
+
+    <!-- ── Einstellungs-Viertelkreis ── -->
+    <div id="settingsArea">
+        <!-- Zahnrad-Icon -->
+        <div id="settingsGear">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" fill="#28192F"/>
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M9.35 3.47a1 1 0 0 1 .98-.8h3.34a1 1 0 0 1 .98.8l.3 1.46a7.1 7.1 0 0 1 1.42.83l1.4-.5a1 1 0 0 1 1.22.46l1.67 2.9a1 1 0 0 1-.24 1.27l-1.15.9c.04.3.06.6.06.91s-.02.6-.06.91l1.15.9a1 1 0 0 1 .24 1.27l-1.67 2.9a1 1 0 0 1-1.22.46l-1.4-.5a7.1 7.1 0 0 1-1.42.83l-.3 1.46a1 1 0 0 1-.98.8h-3.34a1 1 0 0 1-.98-.8l-.3-1.46a7.1 7.1 0 0 1-1.42-.83l-1.4.5a1 1 0 0 1-1.22-.46l-1.67-2.9a1 1 0 0 1 .24-1.27l1.15-.9A7.2 7.2 0 0 1 4.33 12c0-.31.02-.61.06-.91l-1.15-.9a1 1 0 0 1-.24-1.27l1.67-2.9a1 1 0 0 1 1.22-.46l1.4.5a7.1 7.1 0 0 1 1.42-.83l.3-1.46z"
+                    fill="#28192F"/>
+            </svg>
+        </div>
+
+        <!-- Menü-Einträge entlang des Bogens -->
+        <button type="button" class="settings-item" id="volumeItem" onclick="openVolumeModal()">
+            Lautstärke
+        </button>
+    </div>
+
+    <!-- ── Lautstärke-Modal ── -->
+    <div id="volumeOverlay" onclick="closeVolumeModal()"></div>
+    <div id="volumeModal">
+        <h3>Lautstärke</h3>
+        <div id="sliderWrapper">
+            <input type="range" id="volumeSlider" min="0" max="100" aria-label="Lautstärke">
+        </div>
+        <span id="volumeLabel">80%</span>
+        <button type="button" id="closeModalBtn" onclick="closeVolumeModal()">✕</button>
+    </div>
+
+    <script>
+        function openVolumeModal() {
+            const vol = Math.round(window.getSiteVolume() * 100);
+            document.getElementById('volumeSlider').value = vol;
+            document.getElementById('volumeLabel').textContent = vol + '%';
+            document.getElementById('volumeOverlay').classList.add('open');
+            document.getElementById('volumeModal').classList.add('open');
+        }
+
+        function closeVolumeModal() {
+            document.getElementById('volumeOverlay').classList.remove('open');
+            document.getElementById('volumeModal').classList.remove('open');
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('volumeSlider').addEventListener('input', function () {
+                const val = parseInt(this.value);
+                document.getElementById('volumeLabel').textContent = val + '%';
+                window.setSiteVolume(val / 100);
+            });
+        });
+    </script>
 </body>
 </html>
