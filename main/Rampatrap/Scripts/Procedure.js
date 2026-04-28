@@ -1,103 +1,123 @@
-introductionVillageScene();
+let CONFIG = { scenes: {}, audio: {} };
 
+fetch('../api/get_character.php?slug=rampatrap')
+    .then(r => r.json())
+    .then(data => {
+        data.scenes.forEach(s => {
+            const objMap = {};
+            s.objects.forEach(o => { objMap[o.object_key] = o; });
+            CONFIG.scenes[s.scene_key] = { ...s, objectMap: objMap };
+        });
+        CONFIG.audio = data.audio;
+        introductionVillageScene();
+    })
+    .catch(() => introductionVillageScene());
 
-//------------------------------------------------------------------------------------
+// ─────────────────────── INTRO VILLAGE ───────────────────────
 
 function introductionVillageScene() {
+    const s    = CONFIG.scenes.intro_village || {};
+    const objs = s.objectMap || {};
 
-    changeBackground("SVGs/village.svg", 1920, 1080);
+    changeBackground(s.background_svg || 'SVGs/village.svg', s.bg_width || 1920, s.bg_height || 1080);
 
-    addObject("rampatrap", "SVGs/rampatrapNoArm.svg", 1015, 1000, 230);
-    addObject("rampatrapArm", "SVGs/rampatrapArm.svg", 640, 340, 50);
+    const ramp = objs.rampatrap    || { svg_path: 'SVGs/rampatrapNoArm.svg', pos_right: 1015, pos_bottom: 1000, width: 230 };
+    const arm  = objs.rampatrapArm || { svg_path: 'SVGs/rampatrapArm.svg',   pos_right:  640, pos_bottom:  340, width:  50 };
 
+    addObject('rampatrap',    ramp.svg_path, ramp.pos_right, ramp.pos_bottom, ramp.width);
+    addObject('rampatrapArm', arm.svg_path,  arm.pos_right,  arm.pos_bottom,  arm.width);
 
-    const audio = new Audio('audios/rampatrapVillageStartScene.mp3');
+    const audio = new Audio(CONFIG.audio.village_start || 'audios/rampatrapVillageStartScene.mp3');
     audio.play();
 
     setTimeout(explanationVillageScene, 4000);
-
-    audio.addEventListener('ended', function () {
-        houseScene();
-    });
-
+    audio.addEventListener('ended', houseScene);
 }
+
+// ─────────────────────── EXPLANATION VILLAGE ───────────────────────
 
 function explanationVillageScene() {
-    changeBackground("SVGs/village.svg", 1920, 1080);
+    const s    = CONFIG.scenes.explanation_village || {};
+    const objs = s.objectMap || {};
 
-    deleteObject("rampatrap");
-    deleteObject("rampatrapArm");
+    changeBackground(s.background_svg || 'SVGs/village.svg', s.bg_width || 1920, s.bg_height || 1080);
+    deleteObject('rampatrap');
+    deleteObject('rampatrapArm');
 
-    addObject("rampatrap", "SVGs/rampatrapSad.svg", 1015, 1000, 230);
+    const ramp = objs.rampatrap || { svg_path: 'SVGs/rampatrapSad.svg', pos_right: 1015, pos_bottom: 1000, width: 230 };
+    addObject('rampatrap', ramp.svg_path, ramp.pos_right, ramp.pos_bottom, ramp.width);
 }
 
-//------------------------------------------------------------------------------------
+// ─────────────────────── HOUSE SCENE ───────────────────────
 
 function houseScene() {
-    changeBackground("SVGs/house.svg", 1920, 1080);
+    const s    = CONFIG.scenes.house || {};
+    const objs = s.objectMap || {};
 
-    deleteObject("rampatrap");
+    changeBackground(s.background_svg || 'SVGs/house.svg', s.bg_width || 1920, s.bg_height || 1080);
+    deleteObject('rampatrap');
 
-    addObject("bike", "SVGs/bike.svg", 1100, 600, 270);
-    addObject("car", "SVGs/car.svg", 1900, 650, 500);
+    const bike = objs.bike || { svg_path: 'SVGs/bike.svg', pos_right: 1100, pos_bottom: 600, width: 270 };
+    const car  = objs.car  || { svg_path: 'SVGs/car.svg',  pos_right: 1900, pos_bottom: 650, width: 500 };
 
-    const audio = new Audio('audios/rampatrapHouseDecideScene.mp3');
+    addObject('bike', bike.svg_path, bike.pos_right, bike.pos_bottom, bike.width);
+    addObject('car',  car.svg_path,  car.pos_right,  car.pos_bottom,  car.width);
+
+    const audio = new Audio(CONFIG.audio.house_decide || 'audios/rampatrapHouseDecideScene.mp3');
     audio.play();
 
-    setTimeout(animateBike, 4500);
-    setTimeout(animateCar, 6500);
+    setTimeout(() => { document.getElementById('bike').style.animation = 'orangeAnimation 2s linear'; }, 4500);
+    setTimeout(() => { document.getElementById('car').style.animation  = 'purpleAnimation 2s linear'; }, 6500);
 
-    function animateBike() {
-        document.getElementById("bike").style.animation = "orangeAnimation 2s linear";
-    }
+    audio.addEventListener('ended', () => {
+        document.getElementById('bike').style.animation = 'none';
+        document.getElementById('car').style.animation  = 'none';
 
-    function animateCar() {
-        document.getElementById("car").style.animation = "purpleAnimation 2s linear";
-    }
+        addTextBox('decisionBox', 'Klicke auf das Fahrrad oder das Auto!', 650, 45);
 
-    audio.addEventListener('ended', function () {
-        document.getElementById("bike").style.animation = "none";
-        document.getElementById("car").style.animation = "none";
-
-        addTextBox("decisionBox", "Klicke auf das Fahrrad oder das Auto!", 650, 45);
-
-        document.getElementById("car").addEventListener("click", wrongDecisionScene);
-        document.getElementById("bike").addEventListener("click", RightDecisionScene);
-
+        document.getElementById('car').addEventListener('click',  wrongDecisionScene);
+        document.getElementById('bike').addEventListener('click', RightDecisionScene);
     });
 }
 
-//------------------------------------------------------------------------------------
+// ─────────────────────── WRONG DECISION ───────────────────────
 
 function wrongDecisionScene() {
-    addObject("rampatrap", "SVGs/rampatrapSad.svg", 800, 700, 230);
-    deleteTextBox("decisionBox");
+    const s    = CONFIG.scenes.wrong_decision || {};
+    const objs = s.objectMap || {};
 
-    const audio = new Audio('audios/rampatrapWrongDecision.mp3');
+    const ramp = objs.rampatrap || { svg_path: 'SVGs/rampatrapSad.svg', pos_right: 800, pos_bottom: 700, width: 230 };
+    addObject('rampatrap', ramp.svg_path, ramp.pos_right, ramp.pos_bottom, ramp.width);
+    deleteTextBox('decisionBox');
+
+    const audio = new Audio(CONFIG.audio.wrong || 'audios/rampatrapWrongDecision.mp3');
     audio.play();
-
-    audio.addEventListener('ended', function () {
-        addTextBox("decisionBox", "Klicke auf das Fahrrad um keine schädlichen Abgase in die Luft zu stoßen!", 650, 45)
-        document.getElementById("decisionBox").style.animation = "blendIn 0.5s linear";
-        document.getElementById("bike").onclick = RightDecisionScene;
+    audio.addEventListener('ended', () => {
+        addTextBox('decisionBox', 'Klicke auf das Fahrrad um keine schädlichen Abgase in die Luft zu stoßen!', 650, 45);
+        document.getElementById('decisionBox').style.animation = 'blendIn 0.5s linear';
+        document.getElementById('bike').onclick = RightDecisionScene;
     });
 }
 
-//------------------------------------------------------------------------------------
+// ─────────────────────── RIGHT DECISION ───────────────────────
 
 function RightDecisionScene() {
-    deleteObject("car");
-    deleteObject("bike");
-    deleteTextBox("decisionBox")
-    deleteObject("rampatrap")
+    const s    = CONFIG.scenes.right_decision || {};
+    const objs = s.objectMap || {};
 
-    changeBackground("SVGs/village.svg", 1920, 1080);
-    addObject("rampatrap", "SVGs/rampatrap.svg", 1015, 1000, 230);
+    deleteObject('car');
+    deleteObject('bike');
+    deleteTextBox('decisionBox');
+    deleteObject('rampatrap');
 
-    const audio = new Audio('audios/rampatrapRightDecision.mp3');
+    changeBackground(s.background_svg || 'SVGs/village.svg', s.bg_width || 1920, s.bg_height || 1080);
+
+    const ramp = objs.rampatrap || { svg_path: 'SVGs/rampatrap.svg', pos_right: 1015, pos_bottom: 1000, width: 230 };
+    addObject('rampatrap', ramp.svg_path, ramp.pos_right, ramp.pos_bottom, ramp.width);
+
+    const audio = new Audio(CONFIG.audio.right || 'audios/rampatrapRightDecision.mp3');
     audio.play();
-    audio.addEventListener('ended', function () {
-        window.location.href = "../Worldmap/index.html";
+    audio.addEventListener('ended', () => {
+        window.location.href = '../Worldmap/index.html';
     });
 }
-
