@@ -26,7 +26,7 @@ const playerPositions = [
 
 let randomPositions = [];
 
-// ─────────────────────── INTRO VILLAGE ───────────────────────
+// Intro village scene
 
 function introVillageScene() {
     const s    = CONFIG.scenes.intro_village || {};
@@ -51,7 +51,7 @@ function introVillageScene() {
     audio.addEventListener('ended', houseExplanationScene);
 }
 
-// ─────────────────────── HOUSE EXPLANATION ───────────────────────
+// House explanation scene
 
 function houseExplanationScene() {
     const s    = CONFIG.scenes.house_explanation || {};
@@ -82,7 +82,7 @@ function houseExplanationScene() {
     });
 }
 
-// ─────────────────────── GAME ROUND ───────────────────────
+// Game round
 
 function startGameRound() {
     const s    = CONFIG.scenes.game_round || {};
@@ -125,7 +125,7 @@ function startGameRound() {
     });
 }
 
-// ─────────────────────── LICHT WECHSELN ───────────────────────
+// Toggle room light on click
 
 function changeLight(object) {
     if (object.classList.contains('light')) {
@@ -172,7 +172,7 @@ function checkWin() {
     }
 }
 
-// ─────────────────────── END VILLAGE ───────────────────────
+// End village scene
 
 function endVillageScene() {
     const s    = CONFIG.scenes.end_village || {};
