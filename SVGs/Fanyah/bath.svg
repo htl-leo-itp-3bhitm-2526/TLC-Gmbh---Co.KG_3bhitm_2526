@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1920 1080">
+  <!-- Generator: Adobe Illustrator 29.8.2, SVG Export Plug-In . SVG Version: 2.1.1 Build 3)  -->
+  <defs>
+    <style>
+      .st0 {
+        fill: #cecac9;
+      }
+
+      .st1 {
+        fill: #a9a48d;
+      }
+
+      .st2 {
+        fill: #fff;
+      }
+
+      .st3 {
+        fill: #dbcfb1;
+      }
+
+      .st4 {
+        fill: #a0d8d7;
+      }
+
+      .st5 {
+        fill: #8e375c;
+      }
+
+      .st6 {
+        fill: #52b281;
+      }
+
+      .st7 {
+        fill: #eaeae8;
+      }
+
+      .st8 {
+        fill: #2abbd0;
+      }
+
+      .st9 {
+        fill: #fac05a;
+      }
+
+      .st10 {
+        fill: #7dbefa;
+      }
+    </style>
+  </defs>
+  <g>
+    <rect class="st8" x="0" y="649.4" width="1920" height="430.4"/>
+    <rect class="st2" x="1757.9" y="649.4" width="14.6" height="430.5"/>
+    <polygon class="st2" points="1404.3 1079.7 1425.7 649.5 1440.3 649.8 1418.9 1080.1 1404.3 1079.7"/>
+    <polygon class="st2" points="1020.7 1079.1 1052.7 649.2 1067.3 649.7 1035.2 1079.7 1020.7 1079.1"/>
+    <polygon class="st2" points="642 1078.6 684.7 649.1 699.3 649.8 656.5 1079.3 642 1078.6"/>
+    <polygon class="st2" points="275.3 1078.4 328.7 649.5 343.3 650.4 289.9 1079.3 275.3 1078.4"/>
+    <rect class="st2" x="1.7" y="952.4" width="1918.3" height="10.2"/>
+    <rect class="st2" x="1.6" y="837.6" width="1918.3" height="10.2"/>
+    <rect class="st2" x="3.1" y="735.4" width="1916.9" height="10.2"/>
+    <rect class="st9" x="1.2" y="0" width="1918.8" height="649.1"/>
+  </g>
+  <rect class="st10" x="512.3" y="0" width="899.7" height="348.5"/>
+  <rect class="st7" x="770.4" y="614.4" width="339.6" height="465.7"/>
+  <path class="st7" d="M1494.3,512c0,158.6-238.5,287.2-532.7,287.2s-532.7-128.6-532.7-287.2,230.4-209.5,524.6-209.5,540.8,50.9,540.8,209.5Z"/>
+  <ellipse class="st0" cx="953.5" cy="577.1" rx="311.2" ry="125.2"/>
+  <ellipse class="st1" cx="989.7" cy="392" rx="25.9" ry="46.8"/>
+  <polygon class="st3" points="989.7 550.8 913.1 550.8 923.9 338.6 976.1 338.6 989.7 550.8"/>
+  <polyline class="st10" points="1008.3 359.5 994.7 369.1 989.7 358.4 1001.3 350.2"/>
+  <polyline class="st10" points="1015.5 394.3 997.7 394.3 997.7 382 1015 382"/>
+  <polyline class="st10" points="1008.6 424 995.6 421.9 996.9 409.6 1013 412.3"/>
+  <path class="st5" d="M1252.4,396.5h58.1v101.7c0,4.9-4,8.9-8.9,8.9h-39c-5.6,0-10.1-4.5-10.1-10.1v-100.6h0Z"/>
+  <ellipse class="st5" cx="1281.4" cy="396.5" rx="29" ry="16.1"/>
+  <ellipse class="st4" cx="1281.4" cy="394.3" rx="23.5" ry="11.3"/>
+  <rect class="st6" x="563.8" y="424" width="322.3" height="17"/>
+  <rect class="st3" x="826.1" y="408.9" width="4.1" height="15.1"/>
+  <rect class="st3" x="834.6" y="408.9" width="4.1" height="15.1"/>
+  <rect class="st3" x="843" y="408.9" width="4.1" height="15.1"/>
+  <rect class="st3" x="851.5" y="408.9" width="4.1" height="15.1"/>
+  <rect class="st3" x="859.9" y="408.9" width="4.1" height="15.1"/>
+  <rect class="st3" x="869" y="408.9" width="4.1" height="15.1"/>
+  <rect class="st3" x="878.1" y="408.9" width="4.1" height="15.1"/>
+  <rect class="st4" x="931.3" y="550.8" width="35.7" height="92.9"/>
+</svg>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1920 1080">
+  <!-- Generator: Adobe Illustrator 29.8.2, SVG Export Plug-In . SVG Version: 2.1.1 Build 3)  -->
+  <defs>
+    <style>
+      .st0 {
+        fill: #3f2323;
+      }
+
+      .st1 {
+        fill: #dbcfb1;
+      }
+
+      .st2 {
+        fill: #9f705a;
+      }
+
+      .st3 {
+        fill: #abafb9;
+      }
+
+      .st4 {
+        fill: #97bf6e;
+      }
+
+      .st5 {
+        fill: #28192f;
+      }
+
+      .st6 {
+        fill: #756276;
+      }
+    </style>
+  </defs>
+  <rect class="st2" x="-.4" y="513.2" width="1920.8" height="566.8"/>
+  <rect class="st3" y="0" width="1920" height="513.2"/>
+  <path class="st1" d="M365,185.5h681.4c40.1,0,72.6,32.5,72.6,72.6v649.1H259.6V291c0-58.2,47.3-105.4,105.4-105.4Z"/>
+  <rect class="st5" x="689.3" y="368.2" width="343.5" height="343.5"/>
+  <rect class="st6" x="625.1" y="141.8" width="687.6" height="172.3" transform="translate(178.1 -376.5) rotate(24.2)"/>
+  <rect class="st6" x="116.3" y="131.8" width="639.1" height="172.3" transform="translate(922.8 238.6) rotate(155.8)"/>
+  <rect class="st0" x="1734.6" y="770.5" width="90" height="309.5"/>
+  <ellipse class="st4" cx="1775.6" cy="610.7" rx="267" ry="219.4"/>
+  <ellipse class="st4" cx="1734.6" cy="256.6" rx="267" ry="219.4"/>
+  <rect class="st0" x="69.7" y="840.3" width="25.5" height="195.6"/>
+  <rect class="st0" x="36.1" y="654.7" width="18" height="195.6" transform="translate(-218.9 46.4) rotate(-17.1)"/>
+  <rect class="st0" x="121.7" y="654.7" width="18" height="195.6" transform="translate(319.3 12.4) rotate(24.2)"/>
+  <rect class="st0" x="73.4" y="654.7" width="18" height="195.6"/>
+</svg>
