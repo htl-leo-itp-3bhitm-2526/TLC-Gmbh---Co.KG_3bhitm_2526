@@ -200,3 +200,57 @@ INSERT INTO audio_files (character_id, audio_key, file_path) VALUES
     (3, 'house_decide',   'audios/rampatrapHouseDecideScene.mp3'),
     (3, 'right',          'audios/rampatrapRightDecision.mp3'),
     (3, 'wrong',          'audios/rampatrapWrongDecision.mp3');
+
+-- ──────────────────────────────────────────────────────────
+--  CHARACTERS – Sailosi (id 4)
+-- ──────────────────────────────────────────────────────────
+
+INSERT INTO characters
+    (name, slug, worldmap_svg, worldmap_arm_svg, worldmap_no_arm_svg,
+     worldmap_right, worldmap_bottom, worldmap_width,
+     worldmap_arm_right, worldmap_arm_bottom, worldmap_arm_width,
+     link_url)
+VALUES
+    ('Sailosi', 'sailosi', '../Sailosi/SVGs/Sailosi.svg', '../Sailosi/SVGs/SailosiArm.svg', '../Sailosi/SVGs/SailosiNoArm.svg', 580, 650, 100, 500, 565, 25, '../Sailosi/Sailosi.html');
+
+-- ──────────────────────────────────────────────────────────
+--  SCENES – Sailosi  (scene_order 1-5)
+-- ──────────────────────────────────────────────────────────
+
+INSERT INTO scenes (character_id, scene_key, background_svg, bg_width, bg_height, scene_order) VALUES
+    (4, 'intro_village',      'SVGs/village.svg',                  1920, 1080, 1),
+    (4, 'intro_sad',          'SVGs/village.svg',                  1920, 1080, 2),
+    (4, 'living_room_intro',  'SVGs/livingRoom.svg',               1920, 1080, 3),
+    (4, 'game',               'SVGs/livingRoomWithNothing).svg',   1920, 1080, 4),
+    (4, 'win',                'SVGs/village.svg',                  1920, 1080, 5);
+
+-- scene_objects – intro_village (scene_id 13)
+INSERT INTO scene_objects (scene_id, object_key, svg_path, pos_right, pos_bottom, width) VALUES
+    (13, 'sailosi',    'SVGs/SailosiNoArm.svg', 1015, 900, 200),
+    (13, 'sailosiArm', 'SVGs/SailosiArm.svg',    800, 733,  50);
+
+-- scene_objects – intro_sad (scene_id 14)
+INSERT INTO scene_objects (scene_id, object_key, svg_path, pos_right, pos_bottom, width) VALUES
+    (14, 'sailosi', 'SVGs/SailosiSad.svg', 1015, 900, 200);
+
+-- scene_objects – living_room_intro (scene_id 15)
+INSERT INTO scene_objects (scene_id, object_key, svg_path, pos_right, pos_bottom, width) VALUES
+    (15, 'sailosi', 'SVGs/Sailosi.svg', 800, 600, 130);
+
+-- scene_objects – game (scene_id 16) – pixel-perfect positions derived from livingRoom.svg coordinates
+INSERT INTO scene_objects (scene_id, object_key, svg_path, pos_right, pos_bottom, width) VALUES
+    (16, 'tv',         'SVGs/tvRed.svg',        1873, 747, 446),
+    (16, 'lamp',       'SVGs/lampRed.svg',        314, 849, 119),
+    (16, 'roboter',    'SVGs/roboterRed.svg',    1209, 341, 165),
+    (16, 'powerStrip', 'SVGs/powerStripRed.svg',  713, 485, 177);
+
+-- scene_objects – win (scene_id 17)
+INSERT INTO scene_objects (scene_id, object_key, svg_path, pos_right, pos_bottom, width) VALUES
+    (17, 'sailosi', 'SVGs/Sailosi.svg', 1015, 900, 200);
+
+-- audio – Sailosi
+INSERT INTO audio_files (character_id, audio_key, file_path) VALUES
+    (4, 'intro',   'audios/sailosiIntro.mp3'),
+    (4, 'explain', 'audios/sailosiExplain.mp3'),
+    (4, 'win',     'audios/sailosiWin.mp3'),
+    (4, 'wrong',   'audios/sailosiWrong.mp3');

@@ -48,6 +48,8 @@ function layout() {
     const introduction = document.getElementById("introduction");
     const jose = document.getElementById("jose");
     const joseArm = document.getElementById("joseArm");
+    const sailosi = document.getElementById("sailosi");
+    const sailosiArm = document.getElementById("sailosiArm");
 
     //Stats der Objekte
     const rampatrapRight = 1140;
@@ -74,6 +76,14 @@ function layout() {
     const joseArmBottom = 955;
     const joseArmWidth = 25;
 
+    const sailosiRight = 580;
+    const sailosiBottom = 650;
+    const sailosiWidth = 100;
+
+    const sailosiArmRight = 500;
+    const sailosiArmBottom = 565;
+    const sailosiArmWidth = 25;
+
     const introductionWidth = 550;
     const introductionTextSize = 50;
     const introductionBorderSize = 8;
@@ -86,6 +96,8 @@ function layout() {
     loadObjects(luciaArm, luciaArmRight, luciaArmBottom, luciaArmWidth);
     loadObjects(jose, joseRight, joseBottom, joseWidth);
     loadObjects(joseArm, joseArmRight, joseArmBottom, joseArmWidth);
+    loadObjects(sailosi, sailosiRight, sailosiBottom, sailosiWidth);
+    loadObjects(sailosiArm, sailosiArmRight, sailosiArmBottom, sailosiArmWidth);
     loadTextBox(introduction, introductionWidth, introductionTextSize, introductionBorderSize, introductionborderRadius);
 }
 

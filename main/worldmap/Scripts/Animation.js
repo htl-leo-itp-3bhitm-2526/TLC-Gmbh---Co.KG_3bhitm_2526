@@ -4,6 +4,8 @@ const lucia = document.getElementById("lucia");
 const luciaArm = document.getElementById("luciaArm");
 const jose = document.getElementById("jose");
 const joseArm = document.getElementById("joseArm");
+const sailosi = document.getElementById("sailosi");
+const sailosiArm = document.getElementById("sailosiArm");
 
 function setGretting() {
     rampatrap.src = "SVGs/rampatrapNoArm.svg";
@@ -50,6 +52,22 @@ function setJoseIdel() {
     setTimeout(setJoseGretting, delay);
 }
 
+function setSailosiGreeting() {
+    sailosi.src = "../Sailosi/SVGs/SailosiNoArm.svg";
+    sailosiArm.style.display = "block";
+
+    setTimeout(setSailosiIdel, 2000);
+}
+
+function setSailosiIdel() {
+    sailosi.src = "../Sailosi/SVGs/Sailosi.svg";
+    sailosiArm.style.display = "none";
+
+    const delay = 5000 + Math.random() * 2000;
+    setTimeout(setSailosiGreeting, delay);
+}
+
 setIdel();
 setLuciaIdel();
 setJoseIdel();
+setSailosiIdel();
