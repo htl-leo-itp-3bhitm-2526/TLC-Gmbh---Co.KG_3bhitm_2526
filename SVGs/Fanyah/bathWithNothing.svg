@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1920 1080">
+  <!-- Generator: Adobe Illustrator 29.8.2, SVG Export Plug-In . SVG Version: 2.1.1 Build 3)  -->
+  <defs>
+    <style>
+      .st0 {
+        fill: #cecac9;
+      }
+
+      .st1 {
+        fill: #fff;
+      }
+
+      .st2 {
+        fill: #7dbefa;
+      }
+
+      .st3 {
+        fill: #eaeae8;
+      }
+
+      .st4 {
+        fill: #2abbd0;
+      }
+
+      .st5 {
+        fill: #fac05a;
+      }
+    </style>
+  </defs>
+  <g>
+    <rect class="st4" y="649.4" width="1920" height="430.4"/>
+    <rect class="st1" x="1757.9" y="649.4" width="14.6" height="430.5"/>
+    <polygon class="st1" points="1404.3 1079.7 1425.7 649.5 1440.3 649.8 1418.9 1080.1 1404.3 1079.7"/>
+    <polygon class="st1" points="1020.7 1079.1 1052.7 649.2 1067.3 649.7 1035.2 1079.7 1020.7 1079.1"/>
+    <polygon class="st1" points="642 1078.6 684.7 649.1 699.3 649.8 656.5 1079.3 642 1078.6"/>
+    <polygon class="st1" points="275.3 1078.4 328.7 649.5 343.3 650.4 289.9 1079.3 275.3 1078.4"/>
+    <rect class="st1" x="1.7" y="952.4" width="1918.3" height="10.2"/>
+    <rect class="st1" x="1.6" y="837.6" width="1918.3" height="10.2"/>
+    <rect class="st1" x="3.1" y="735.4" width="1916.9" height="10.2"/>
+    <rect class="st5" x="1.2" width="1918.8" height="649.1"/>
+  </g>
+  <rect class="st2" x="512.3" width="899.7" height="348.5"/>
+  <rect class="st3" x="770.4" y="614.4" width="339.6" height="465.7"/>
+  <path class="st3" d="M1494.3,512c0,158.6-238.5,287.2-532.7,287.2s-532.7-128.6-532.7-287.2,230.4-209.5,524.6-209.5,540.8,50.9,540.8,209.5Z"/>
+  <ellipse class="st0" cx="953.5" cy="577.1" rx="311.2" ry="125.2"/>
+</svg>
