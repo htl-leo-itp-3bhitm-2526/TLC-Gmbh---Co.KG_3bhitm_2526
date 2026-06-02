@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fanyah – Madagaskar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Styles/Fanyah.css">
+</head>
+<body>
+<div id="scene">
+    <img id="background" src="" alt="">
+
+    <div id="dropZone"></div>
+    <img id="tapeOnScene" src="SVGs/TapeNoWater.svg" alt="">
+    <img id="fanyahChar" class="scene-char" src="" alt="Fanyah" style="display:none">
+
+    <div id="splash"></div>
+    <div id="wrongMsg"></div>
+
+    <div id="hud">
+        <div class="hud-step active" id="s1">Becher nehmen</div>
+        <div class="hud-sep">&#8250;</div>
+        <div class="hud-step" id="s2">Hahn abdrehen</div>
+        <div class="hud-sep">&#8250;</div>
+        <div class="hud-step" id="s3">Abspuelen</div>
+    </div>
+
+    <div id="dialogOverlay">
+        <div id="dialogBox" class="hidden">
+            <div class="speaker">Fanyah</div>
+            <div id="dialogText"></div>
+            <div class="hint">Tippe zum Weiter &#9658;</div>
+        </div>
+    </div>
+</div>
+
+<script src="Scripts/Layout.js"     defer></script>
+<script src="Scripts/SceneLoader.js" defer></script>
+<script src="Scripts/Procedure.js"  defer></script>
+</body>
+</html>
