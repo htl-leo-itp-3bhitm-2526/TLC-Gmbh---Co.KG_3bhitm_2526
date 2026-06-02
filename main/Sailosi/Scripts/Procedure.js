@@ -156,35 +156,20 @@ function tryPowerStrip() {
 function wrongAttempt() {
     gameActive = false;
 
-    // Reset all devices to red in the objects array BEFORE the DOM rebuild
     DEVICES.forEach(id => {
         devicesOff.delete(id);
         const obj = objects.find(o => o.id === id);
         if (obj) obj.img = `SVGs/${id}Red.svg`;
     });
 
-    // addObject triggers loadHTMLs which rebuilds the DOM using the updated (red) img values
     addObject('sailosiSad', 'SVGs/SailosiSad.svg', 960, 600, 150);
     deleteTextBox('instructionBox');
     addTextBox('feedbackBox', 'Oh je! Mach erst alle roten Lichter aus, dann den Hauptschalter!', 700, 30);
 
-    let resumed = false;
-    const resume = () => {
-        if (resumed) return;
-        resumed = true;
-        deleteObject('sailosiSad');
-        deleteTextBox('feedbackBox');
-        addTextBox('instructionBox', 'Schalte alle Standby-Lichter aus und drücke dann den Hauptschalter!', 700, 30);
-        gameActive = true;
-        attachGameHandlers();
-    };
-
-    // Safety net: immer nach 4 Sekunden fortsetzen, egal ob Audio funktioniert oder nicht
-    setTimeout(resume, 4000);
+    setTimeout(() => location.reload(), 3000);
 
     try {
         const audio = new Audio(CONFIG.audio.wrong || 'audios/sailosiWrong.mp3');
-        audio.addEventListener('ended', resume);
         const p = audio.play();
         if (p) p.catch(() => {});
     } catch (e) {}
