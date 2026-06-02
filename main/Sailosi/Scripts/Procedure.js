@@ -168,16 +168,26 @@ function wrongAttempt() {
     deleteTextBox('instructionBox');
     addTextBox('feedbackBox', 'Oh je! Mach erst alle roten Lichter aus, dann den Hauptschalter!', 700, 30);
 
-    const audio = new Audio(CONFIG.audio.wrong || 'audios/sailosiWrong.mp3');
-    audio.play();
-    audio.addEventListener('ended', () => {
+    let resumed = false;
+    const resume = () => {
+        if (resumed) return;
+        resumed = true;
         deleteObject('sailosiSad');
         deleteTextBox('feedbackBox');
         addTextBox('instructionBox', 'Schalte alle Standby-Lichter aus und drücke dann den Hauptschalter!', 700, 30);
-
         gameActive = true;
         attachGameHandlers();
-    });
+    };
+
+    // Safety net: immer nach 4 Sekunden fortsetzen, egal ob Audio funktioniert oder nicht
+    setTimeout(resume, 4000);
+
+    try {
+        const audio = new Audio(CONFIG.audio.wrong || 'audios/sailosiWrong.mp3');
+        audio.addEventListener('ended', resume);
+        const p = audio.play();
+        if (p) p.catch(() => {});
+    } catch (e) {}
 }
 
 // ─────────────────────── WIN ───────────────────────
