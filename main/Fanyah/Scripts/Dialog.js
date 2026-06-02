@@ -1,4 +1,5 @@
 // ─── Dialog.js ───────────────────────────────────────────────────────────────
+// Simple click-through dialog system at the bottom of the screen.
 
 let dlgQueue = [], dlgCb = null;
 
