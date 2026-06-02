@@ -32,8 +32,9 @@ function introScene() {
 }
 
 function bathScene() {
-    changeBackground("SVGs/bath.svg", 1920, 1080);
+    changeBackground("SVGs/bathWithNothing.svg", 1920, 1080);
     showChar("SVGs/Fanyah.svg");
+    createGameObjects();
 
     showDialog([
         "Hilf mir bitte beim Zaehneputzen!",
@@ -43,6 +44,7 @@ function bathScene() {
         "Am Ende darf kurz abgespuelt werden.",
         "Ziehe die Dinge der Reihe nach ins Waschbecken!"
     ], startMiniGame);
+
 }
 
 function startMiniGame() {
@@ -56,7 +58,7 @@ function startMiniGame() {
     setScale();
     positionDropZone();
     positionTapeScene();
-    createGameObjects();
+    changeBackground("SVGs/bathWithNothing.svg", 1920, 1080);
 
     document.getElementById("hud").classList.add("visible");
     showToast("Zieh den Becher ins Waschbecken!");
