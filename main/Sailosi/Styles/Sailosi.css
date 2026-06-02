@@ -77,9 +77,11 @@ body {
 
 .device {
     cursor: pointer;
+    padding: 0 !important;
 }
 
 .powerstrip {
     cursor: pointer;
     filter: brightness(1.1);
+    padding: 0 !important;
 }
