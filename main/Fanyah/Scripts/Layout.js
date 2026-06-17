@@ -23,5 +23,5 @@ function positionBg() {
     bg.style.width  = "auto";
 }
 
-window.addEventListener("resize",            () => { positionBg(); positionGameObjects(); });
-window.addEventListener("orientationchange", () => { positionBg(); positionGameObjects(); });
+window.addEventListener("resize",            () => { positionBg(); positionGameObjects(); positionChar(); });
+window.addEventListener("orientationchange", () => { positionBg(); positionGameObjects(); positionChar(); });
