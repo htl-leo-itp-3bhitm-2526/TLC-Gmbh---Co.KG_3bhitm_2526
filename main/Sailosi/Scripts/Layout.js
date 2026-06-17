@@ -16,7 +16,6 @@ textBoxes = [];
 addEventListener("resize", () => scaleElements(objects, textBoxes));
 addEventListener("orientationchange", () => scaleElements(objects, textBoxes));
 
-
 function setScale() {
     // Bildschirmgröße holen
     scene = document.getElementById("scene");
