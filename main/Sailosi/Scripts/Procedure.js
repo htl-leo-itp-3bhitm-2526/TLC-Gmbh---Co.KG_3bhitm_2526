@@ -13,11 +13,12 @@ fetch('../api/get_character.php?slug=sailosi')
     })
     .catch(() => introVillageScene());
 
-const DEVICES = ['tv', 'lamp', 'roboter'];
+const DEVICES = ['tv', 'lamp', 'roboter', 'powerStrip'];
 const DEVICE_POSITIONS = {
-    tv:      { right: 1873, bottom: 747, width: 446 },
-    lamp:    { right: 314,  bottom: 849, width: 119 },
-    roboter: { right: 1209, bottom: 341, width: 165 },
+    tv:         { right: 1873, bottom: 747, width: 446 },
+    lamp:       { right: 314,  bottom: 849, width: 119 },
+    roboter:    { right: 1209, bottom: 341, width: 165 },
+    powerStrip: { right: 800,  bottom: 450, width: 165 },
 };
 
 const devicesOff = new Set();
@@ -100,9 +101,10 @@ function startGame() {
         return o ? { right: o.pos_right, bottom: o.pos_bottom, width: o.width } : DEVICE_POSITIONS[key];
     };
 
-    addObject('tv',      'SVGs/tvRed.svg',      getPos('tv').right,      getPos('tv').bottom,      getPos('tv').width,      'device');
-    addObject('lamp',    'SVGs/lampRed.svg',     getPos('lamp').right,    getPos('lamp').bottom,    getPos('lamp').width,    'device');
-    addObject('roboter', 'SVGs/roboterRed.svg',  getPos('roboter').right, getPos('roboter').bottom, getPos('roboter').width, 'device');
+    addObject('tv',         'SVGs/tvRed.svg',         getPos('tv').right,         getPos('tv').bottom,         getPos('tv').width,         'device');
+    addObject('lamp',       'SVGs/lampRed.svg',        getPos('lamp').right,       getPos('lamp').bottom,       getPos('lamp').width,       'device');
+    addObject('roboter',    'SVGs/roboterRed.svg',     getPos('roboter').right,    getPos('roboter').bottom,    getPos('roboter').width,    'device');
+    addObject('powerStrip', 'SVGs/powerStripRed.svg',  getPos('powerStrip').right, getPos('powerStrip').bottom, getPos('powerStrip').width, 'device');
 
     addTextBox('instructionBox', 'Schalte alle Standby-Lichter aus!', 700, 30);
 
@@ -122,11 +124,12 @@ function turnOffDevice(id) {
     devicesOff.add(id);
 
     const obj = objects.find(o => o.id === id);
-    if (obj) obj.img = `SVGs/${id}.svg`;
+    const svgName = id === 'powerStrip' ? 'powerStrip' : id;
+    if (obj) obj.img = `SVGs/${svgName}.svg`;
 
     const el = document.getElementById(id);
     if (el) {
-        el.src          = `SVGs/${id}.svg`;
+        el.src          = `SVGs/${svgName}.svg`;
         el.onclick      = null;
         el.style.cursor = 'default';
     }
