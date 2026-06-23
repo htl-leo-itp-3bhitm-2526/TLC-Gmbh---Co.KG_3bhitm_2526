@@ -130,11 +130,17 @@ body {
 }
 
 .timerBarWrap {
-    width: 30vw;
-    height: 1.5vh;
-    background: #28192F;
+    position: relative;
+    width: 40vw;
+    height: 2vh;
     border-radius: 8px;
-    overflow: hidden;
+    overflow: visible;
+    /* zones: grey → green → red, matching BAR_MS/BAR_TOTAL_MS = 8/14 ≈ 57.14%, 12/14 ≈ 85.71% */
+    background: linear-gradient(to right,
+        #555    0%,      #555    57.14%,
+        #4caf50 57.14%,  #4caf50 85.71%,
+        #e53935 85.71%,  #e53935 100%
+    );
 }
 
 .timerBar {
@@ -142,12 +148,62 @@ body {
     width: 0%;
     background: #FED880;
     border-radius: 8px;
-    transition: width 0.1s linear;
+    transition: background 0.4s;
+    position: relative;
+    z-index: 1;
+}
+
+.timerBar.clean {
+    background: #4caf50;
+}
+
+.timerBar.over {
+    background: #e53935;
+}
+
+.timerMarker {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 3px;
+    z-index: 2;
+    transform: translateX(-50%);
+}
+
+.timerMarker span {
+    position: absolute;
+    top: calc(100% + 0.5vh);
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    font-size: 1.4vh;
+    font-weight: bold;
+    padding: 0.2vh 0.5vw;
+    border-radius: 4px;
+}
+
+.markerClean {
+    background: #4caf50;
+}
+
+.markerClean span {
+    background: #4caf50;
+    color: #fff;
+}
+
+.markerOver {
+    background: #e53935;
+}
+
+.markerOver span {
+    background: #e53935;
+    color: #fff;
 }
 
 .timerButtons {
     display: flex;
     gap: 2vw;
+    margin-top: 1vh;
 }
 
 .timerButtons button {

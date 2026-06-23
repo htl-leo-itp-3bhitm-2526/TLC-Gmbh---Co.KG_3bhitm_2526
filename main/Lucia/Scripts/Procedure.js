@@ -46,7 +46,7 @@ function introVillageScene() {
         addObject('lucia', 'SVGs/Lucia.svg', lucia.pos_right, lucia.pos_bottom, lucia.width);
     }, 3000);
 
-    const audio = new Audio(CONFIG.audio.intro || '../Rampatrap/audios/rampatrapVillageStartScene.mp3');
+    const audio = new Audio('audios/LuciaStart.mp3');
     audio.play();
     audio.addEventListener('ended', houseExplanationScene);
 }
@@ -74,7 +74,7 @@ function houseExplanationScene() {
     addRoom('room3', 'SVGs/room3.svg', 1475, 460, 250, 'light');
     addRoom('room4', 'SVGs/room4.svg', 1175, 460, 250, 'light');
 
-    const audio = new Audio(CONFIG.audio.explain || '../Rampatrap/audios/rampatrapHouseDecideScene.mp3');
+    const audio = new Audio('audios/LuciaIntroduction.mp3');
     audio.play();
     audio.addEventListener('ended', () => {
         deleteObject('lucia');
@@ -158,7 +158,7 @@ function checkWin() {
         document.getElementById(id).onclick = null;
     });
 
-    const audio = new Audio(CONFIG.audio.round_win || '../Rampatrap/audios/rampatrapRightDecision.mp3');
+    const audio = new Audio(CONFIG.audio.round_win || 'audios/LuciaGut.mp3');
     round++;
 
     if (round >= maxRounds) {
@@ -187,7 +187,7 @@ function endVillageScene() {
     const lucia = objs.lucia || { svg_path: 'SVGs/Lucia.svg', pos_right: 1015, pos_bottom: 1000, width: 230 };
     addObject('lucia', lucia.svg_path, lucia.pos_right, lucia.pos_bottom, lucia.width);
 
-    const audio = new Audio(CONFIG.audio.round_win || '../Rampatrap/audios/rampatrapRightDecision.mp3');
+    const audio = new Audio(CONFIG.audio.round_win || 'audios/LuciaSuper.mp3');
     audio.play();
     audio.addEventListener('ended', () => {
         window.location.href = '../worldmap/index.html';

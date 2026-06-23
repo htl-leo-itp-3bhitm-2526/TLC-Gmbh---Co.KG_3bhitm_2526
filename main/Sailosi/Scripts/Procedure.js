@@ -40,7 +40,7 @@ function introVillageScene() {
 
     setTimeout(introSadScene, 4000);
 
-    const audio = new Audio(CONFIG.audio.intro || 'audios/sailosiIntro.mp3');
+    const audio = new Audio(CONFIG.audio.intro || '../Rampatrap/audios/rampatrapVillageStartScene.mp3');
     let sceneDone = false;
     const goToRoom = () => { if (!sceneDone) { sceneDone = true; livingRoomIntroScene(); } };
     audio.addEventListener('ended', goToRoom);
@@ -74,7 +74,7 @@ function livingRoomIntroScene() {
     const sailosi = objs.sailosi || { svg_path: 'SVGs/Sailosi.svg', pos_right: 800, pos_bottom: 600, width: 130 };
     addObject('sailosi', sailosi.svg_path, sailosi.pos_right, sailosi.pos_bottom, sailosi.width);
 
-    const audio = new Audio(CONFIG.audio.explain || 'audios/sailosiExplain.mp3');
+    const audio = new Audio(CONFIG.audio.explain || '../Rampatrap/audios/rampatrapHouseDecideScene.mp3');
     let sceneDone = false;
     const goToGame = () => { if (!sceneDone) { sceneDone = true; startGame(); } };
     audio.addEventListener('ended', goToGame);
@@ -157,7 +157,7 @@ function winScene() {
     setTimeout(goToMap, 5000);
 
     try {
-        const audio = new Audio(CONFIG.audio.win || 'audios/sailosiWin.mp3');
+        const audio = new Audio(CONFIG.audio.win || '../Rampatrap/audios/rampatrapRightDecision.mp3');
         audio.addEventListener('ended', goToMap);
         const p = audio.play();
         if (p) p.catch(() => {});

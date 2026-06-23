@@ -12,23 +12,37 @@ let gameActive = false;
 let dragging   = null;
 
 
+function playAudio(src, callback) {
+    const audio = new Audio(src);
+    let done = false;
+    const next = () => { if (!done) { done = true; if (callback) callback(); } };
+    audio.addEventListener('ended', next);
+    const p = audio.play();
+    if (p) p.catch(() => setTimeout(next, 5000));
+}
+
 function introScene() {
     changeBackground("SVGs/village.svg", 1920, 1080);
-    showChar("SVGs/Fanyah.svg");
+    showChar("SVGs/FanyahWithLegsNoArm.svg");
+
+    // Arm: character top-left at SVG (800,410), rendered width 170 (char SVG 267.4×650)
+    // Shoulder at ~78% x, ~23% y of the character SVG → SVG space ≈ (933, 503)
+    const arm = document.createElement('img');
+    arm.id        = 'fanyahIntroArm';
+    arm.src       = 'SVGs/FanyahArm.svg';
+    arm.className = 'scene-char fanyah-intro-arm';
+    arm.style.width = (45 * scale) + 'px';
+    arm.style.left  = sx(933) + 'px';
+    arm.style.top   = sy(503) + 'px';
+    document.getElementById('scene').appendChild(arm);
 
     setTimeout(() => {
+        const a = document.getElementById('fanyahIntroArm');
+        if (a) a.remove();
         document.getElementById("fanyahChar").src = "SVGs/FanyahSad.svg";
     }, 3500);
 
-    showDialog([
-        "Hallo! Ich bin Fanyah aus Madagaskar.",
-        "Bei uns regnet es oft viel zu wenig.",
-        "Die Erde ist trocken und Wasser ist sehr wertvoll.",
-        "Wenn es lange nicht regnet, leiden Felder, Pflanzen und Familien.",
-        "Dann wird jeder einzelne Tropfen wichtig.",
-        "Manchmal wuensche ich mir einfach nur genug Wasser fuer alle.",
-        "Kannst du mir von Oesterreich aus helfen?"
-    ], bathScene);
+    playAudio('../Rampatrap/audios/rampatrapVillageStartScene.mp3', bathScene);
 }
 
 function bathScene() {
@@ -36,15 +50,7 @@ function bathScene() {
     showChar("SVGs/Fanyah.svg");
     createGameObjects();
 
-    showDialog([
-        "Hilf mir bitte beim Zaehneputzen!",
-        "Im Bad stehen Becher, Zahnbuerste und Wasserhahn bereit.",
-        "Nimm zuerst den Becher.",
-        "Dann dreh den Wasserhahn ab, solange geputzt wird.",
-        "Am Ende darf kurz abgespuelt werden.",
-        "Ziehe die Dinge der Reihe nach ins Waschbecken!"
-    ], startMiniGame);
-
+    playAudio('../Rampatrap/audios/rampatrapHouseDecideScene.mp3', startMiniGame);
 }
 
 function startMiniGame() {
@@ -74,36 +80,18 @@ function onGameSuccess() {
 
     if (wrongCount === 0) {
         showChar("SVGs/Fanyah.svg");
-        showDialog([
-            "Ganz toll!",
-            "Du hast beim Zaehneputzen Wasser gespart.",
-            "Der Hahn war nicht die ganze Zeit offen.",
-            "So geht viel weniger Wasser verloren.",
-            "Jeder gesparte Tropfen ist wichtig.",
-            "Danke, dass du mir hilfst!"
-        ], endScene);
     } else {
         showChar("SVGs/FanyahSad.svg");
-        showDialog([
-            "Ups, dabei ist noch zu viel Wasser gelaufen.",
-            "Beim Zaehneputzen muss der Wasserhahn nicht die ganze Zeit offen sein.",
-            "Du hast es trotzdem geschafft - gut gemacht!",
-            "Nimm zuerst den Becher und dreh den Hahn zwischendurch ab."
-        ], endScene);
     }
+    setTimeout(endScene, 1000);
 }
 
 function endScene() {
     changeBackground("SVGs/village.svg", 1920, 1080);
     showChar("SVGs/Fanyah.svg");
 
-    showDialog([
-        "Danke fuer deine Hilfe!",
-        "Zusammen koennen wir Wasser sparen - in Oesterreich und in Madagaskar.",
-        "Auf Wiedersehen! - Fanyah"
-    ], () => {
-        document.getElementById("dialogBox").classList.add("hidden");
-        // window.location.href = "../worldmap/index.html";
+    playAudio('../Rampatrap/audios/rampatrapVillageStartScene.mp3', () => {
+        window.location.href = '../worldmap/index.html';
     });
 }
 
