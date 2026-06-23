@@ -6,6 +6,8 @@ const jose = document.getElementById("jose");
 const joseArm = document.getElementById("joseArm");
 const sailosi = document.getElementById("sailosi");
 const sailosiArm = document.getElementById("sailosiArm");
+const fanyah = document.getElementById("fanyah");
+const fanyahArm = document.getElementById("fanyahArm");
 
 function setGretting() {
     rampatrap.src = "SVGs/rampatrapNoArm.svg";
@@ -53,21 +55,37 @@ function setJoseIdel() {
 }
 
 function setSailosiGreeting() {
-    sailosi.src = "../Sailosi/SVGs/SailosiNoArm.svg";
+    sailosi.src = "../Sailosi/SVGs/SailosiWithLegsNoArm.svg";
     sailosiArm.style.display = "block";
 
     setTimeout(setSailosiIdel, 2000);
 }
 
 function setSailosiIdel() {
-    sailosi.src = "../Sailosi/SVGs/Sailosi.svg";
+    sailosi.src = "../Sailosi/SVGs/SailosiWithLegs.svg";
     sailosiArm.style.display = "none";
 
     const delay = 5000 + Math.random() * 2000;
     setTimeout(setSailosiGreeting, delay);
 }
 
+function setFanyahIdel(){
+    fanyah.src = "../Fanyah/SVGs/FanyahWithLegs.svg";
+    fanyahArm.style.display = "none";
+
+    const delay = 5000 + Math.random() * 2000;
+    setTimeout(setFanyahGreeting, delay);
+}
+
+function setFanyahGreeting() {
+    fanyah.src = "../Fanyah/SVGs/FanyahWithLegsNoArm.svg";
+    fanyahArm.style.display = "block";
+
+    setTimeout(setFanyahIdel, 2000);
+}
+
 setIdel();
 setLuciaIdel();
 setJoseIdel();
 setSailosiIdel();
+setFanyahIdel();

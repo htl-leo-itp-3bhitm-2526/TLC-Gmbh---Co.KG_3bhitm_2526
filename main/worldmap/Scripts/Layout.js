@@ -70,28 +70,28 @@ function layout() {
     const luciaArmBottom = 735;
     const luciaArmWidth = 25;
 
-    const joseRight = 2400;
-    const joseBottom = 1040;
-    const joseWidth = 100;
+    const joseRight = 2200; //2400
+    const joseBottom = 1150; //1040
+    const joseWidth = 200;
 
-    const joseArmRight = 2300;
-    const joseArmBottom = 955;
+    const joseArmRight = 2100;
+    const joseArmBottom = 1020;
     const joseArmWidth = 25;
 
     const sailosiRight = 580;
-    const sailosiBottom = 650;
+    const sailosiBottom = 750; //650
     const sailosiWidth = 100;
 
-    const sailosiArmRight = 500;
-    const sailosiArmBottom = 565;
+    const sailosiArmRight = 530;
+    const sailosiArmBottom = 680;
     const sailosiArmWidth = 25;
 
-    const fanyahRight = 1600;
-    const fanyahBottom = 1000;
-    const fanyahWidth = 100;
+    const fanyahRight = 1280; //1600
+    const fanyahBottom = 770; //1000
+    const fanyahWidth = 85;
 
-    const fanyahArmRight = 1520;
-    const fanyahArmBottom = 915;
+    const fanyahArmRight = 1240;
+    const fanyahArmBottom = 705;
     const fanyahArmWidth = 25;
 
     const introductionWidth = 550;

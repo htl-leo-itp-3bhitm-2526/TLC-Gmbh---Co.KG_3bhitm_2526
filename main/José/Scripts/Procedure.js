@@ -57,13 +57,7 @@ function bathScene() {
 
     deleteObject('jose');
     deleteObject('joseArm');
-    changeBackground(s.background_svg || 'SVGs/bath.svg', s.bg_width || 1920, s.bg_height || 1080);
-
-    const hand1 = objs.showerHand1 || { svg_path: 'SVGs/ShowerHand.svg', pos_right: 1430, pos_bottom: 840, width: 200 };
-    const hand2 = objs.showerHand2 || { svg_path: 'SVGs/ShowerHand.svg', pos_right: 1030, pos_bottom: 840, width: 200 };
-
-    addObject('showerHand1', hand1.svg_path, hand1.pos_right, hand1.pos_bottom, hand1.width);
-    addObject('showerHand2', hand2.svg_path, hand2.pos_right, hand2.pos_bottom, hand2.width);
+    changeBackground(s.background_svg || 'SVGs/bathNoPerson.svg', s.bg_width || 1920, s.bg_height || 1080);
 
     const audio = new Audio(CONFIG.audio.explain || 'audios/joseExplain.mp3');
     let sceneDone = false;
@@ -76,16 +70,34 @@ function bathScene() {
 
 // ───────────────────────── TIMER ─────────────────────────
 
-const BAR_MS = 8000;
+const BAR_MS       = 8000;
+const OVER_MS      = 4000;
+const BAR_TOTAL_MS = BAR_MS + OVER_MS + 2000;
 let timerElapsed = 0, timerStart = 0, timerRunId = null;
 let barAnimId = null, barFrameStart = 0, barAccum = 0;
+let cleanReached = false, overReached = false;
 
 function showTimer() {
+    const s    = CONFIG.scenes.bath || {};
+    const objs = s.objectMap || {};
+    const hand1 = objs.showerHand1 || { svg_path: 'SVGs/ShowerHand.svg', pos_right: 1430, pos_bottom: 840, width: 200 };
+    const hand2 = objs.showerHand2 || { svg_path: 'SVGs/ShowerHand.svg', pos_right: 1030, pos_bottom: 840, width: 200 };
+    changeBackground('SVGs/bath.svg', s.bg_width || 1920, s.bg_height || 1080);
+    addObject('showerHand1', hand1.svg_path, hand1.pos_right, hand1.pos_bottom, hand1.width);
+    addObject('showerHand2', hand2.svg_path, hand2.pos_right, hand2.pos_bottom, hand2.width);
+
+    const cleanPct = (BAR_MS / BAR_TOTAL_MS * 100).toFixed(2);
+    const overPct  = ((BAR_MS + OVER_MS) / BAR_TOTAL_MS * 100).toFixed(2);
+
     const container = document.createElement('div');
     container.id = 'timerContainer';
     container.innerHTML = `
         <div id="timerDisplay">00:00.0</div>
-        <div class="timerBarWrap"><div class="timerBar" id="timerBar"></div></div>
+        <div class="timerBarWrap">
+            <div class="timerBar" id="timerBar"></div>
+            <div class="timerMarker markerClean" style="left:${cleanPct}%"><span>✓ Sauber</span></div>
+            <div class="timerMarker markerOver"  style="left:${overPct}%"><span>✗ Zu lange</span></div>
+        </div>
         <div class="timerButtons">
             <button id="timerStart">Start</button>
             <button id="timerStop" disabled>Stop</button>
@@ -106,26 +118,41 @@ function fmtTime(ms) {
 
 function renderBar(ms) {
     const bar = document.getElementById('timerBar');
-    if (bar) bar.style.width = Math.min(ms / BAR_MS, 1) * 100 + '%';
+    if (bar) bar.style.width = Math.min(ms / BAR_TOTAL_MS, 1) * 100 + '%';
 }
 
 function tickBar(ts) {
     if (!barFrameStart) barFrameStart = ts;
     const total = barAccum + (ts - barFrameStart);
     renderBar(total);
-    if (total < BAR_MS) {
+
+    if (!cleanReached && total >= BAR_MS) {
+        cleanReached = true;
+        const bar = document.getElementById('timerBar');
+        if (bar) bar.classList.add('clean');
+        document.getElementById('timerStop').disabled = false;
+    }
+
+    if (!overReached && total >= BAR_MS + OVER_MS) {
+        overReached = true;
+        const bar = document.getElementById('timerBar');
+        if (bar) { bar.classList.remove('clean'); bar.classList.add('over'); }
+    }
+
+    if (total < BAR_TOTAL_MS) {
         barAnimId = requestAnimationFrame(tickBar);
     } else {
         barAnimId = null;
         barFrameStart = 0;
-        barAccum = BAR_MS;
+        barAccum = BAR_TOTAL_MS;
     }
 }
 
 function startTimer() {
     if (timerRunId) return;
+    cleanReached = false;
+    overReached  = false;
     document.getElementById('timerStart').disabled = true;
-    document.getElementById('timerStop').disabled  = false;
 
     timerStart = Date.now();
     timerRunId = setInterval(() => {
@@ -157,6 +184,13 @@ function resultScene(ms) {
     deleteObject('showerHand2');
 
     const overshoot = ms - BAR_MS;
+
+    const s    = CONFIG.scenes.end_village || {};
+    const objs = s.objectMap || {};
+    changeBackground(s.background_svg || 'SVGs/field.svg', s.bg_width || 1920, s.bg_height || 1080);
+    const joseSvg = overshoot <= OVER_MS ? 'SVGs/José.svg' : 'SVGs/JoséSad.svg';
+    const joseObj = objs.jose || { pos_right: 1615, pos_bottom: 1400, width: 500 };
+    addObject('jose', joseSvg, joseObj.pos_right, joseObj.pos_bottom, joseObj.width);
     let audioFile;
 
     if (CONFIG.results && CONFIG.results.length > 0) {
@@ -166,9 +200,7 @@ function resultScene(ms) {
         const match = sorted.find(r => r.max_overshoot_ms === null || overshoot <= Number(r.max_overshoot_ms));
         audioFile = CONFIG.audio[match?.audio_key] || 'audios/joseBad.mp3';
     } else {
-        if (overshoot <= 1000)      audioFile = 'audios/joseGood.mp3';
-        else if (overshoot <= 2500) audioFile = 'audios/joseMedium.mp3';
-        else                        audioFile = 'audios/joseBad.mp3';
+        audioFile = overshoot <= OVER_MS ? 'audios/joseGood.mp3' : 'audios/joseBad.mp3';
     }
 
     const audio = new Audio(audioFile);
